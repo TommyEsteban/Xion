@@ -25,5 +25,6 @@ int datasetValidator_dimensionMaxLength_returnFalseAndMessage();
 int datasetValidator_dimensionNotNumber_returnFalseAndMessage();
 int datasetValidator_dimensionZero_returnFalseAndMessage();
 int datasetValidator_dimensionGreaterThanZero_returnTrue();
+int createDataset_notExistingFolder_returnFalseAndMessage();
 
 #endif

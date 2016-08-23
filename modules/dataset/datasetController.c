@@ -13,7 +13,7 @@ bool dat_createDataset(char **arguments, char *errorMessage)
 
     if (ENOENT == errno)
     {
-        errorMessage = NOT_FOUND_DIRECTORY;
+        strcpy(errorMessage, NOT_FOUND_DIRECTORY);
         free(dir);
         return false;
     }

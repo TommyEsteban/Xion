@@ -1,3 +1,0 @@
-/home/tommy/Workspace/Xion/CMakeFiles/xion.dir
-/home/tommy/Workspace/Xion/CMakeFiles/xionTest.dir
-/home/tommy/Workspace/Xion/CMakeFiles/xionTesting.dir
