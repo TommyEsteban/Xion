@@ -7,7 +7,7 @@
 
 #include "../../include/datasetValidator.h"
 
-bool dat_isValid(char **arguments, char *errorMessage)
+bool dat_isValid(char **arguments)
 {
     // check the folder path is not null
     if(arguments[2][0] == '\0')

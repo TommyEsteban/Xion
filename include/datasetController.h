@@ -15,6 +15,6 @@
 #include "xionMessages.h"
 #include "dataset.h"
 
-bool dat_createDataset(char **arguments, char *errorMessage);
+bool dat_createDataset(char **arguments);
 
 #endif

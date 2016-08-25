@@ -7,23 +7,23 @@
 
 #include "datasetTest.h"
 
-void initializeData()
+void initializeDatasetTest()
 {
-    errorMessages = (char *)malloc(sizeof(char) * maxErrorLength);
-    arguments = (char **)malloc(sizeof(char *) * maxArguments);
+    errorMessage = (char *)malloc(sizeof(char) * MAX_ERROR_LENGTH);
+    arguments = (char **)malloc(sizeof(char *) * MAX_ARGUMENTS);
 
-    for(uint i = 0; i < maxArguments; i++)
-        arguments[i] = (char *)malloc(sizeof(char) * maxArgumentLength);
+    for(uint i = 0; i < MAX_ARGUMENTS; i++)
+        arguments[i] = (char *)malloc(sizeof(char) * MAX_ARGUMENT_LENGTH);
     
     strcpy(arguments[0], "xion");
     strcpy(arguments[1], "data");
 }
 
-void releaseData()
+void releaseDatasetTest()
 {
-    for(uint i = 0; i < maxArguments; i++)
+    for(uint i = 0; i < MAX_ARGUMENTS; i++)
         free(arguments[i]);
 
     free(arguments);
-    free(errorMessages);
+    free(errorMessage);
 }

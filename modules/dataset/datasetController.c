@@ -7,7 +7,7 @@
 
 #include "../../include/datasetController.h"
 
-bool dat_createDataset(char **arguments, char *errorMessage)
+bool dat_createDataset(char **arguments)
 {
     DIR *dir = opendir(arguments[2]);
 

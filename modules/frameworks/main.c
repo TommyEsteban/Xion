@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "../../include/xionMessages.h"
 #include "../../include/xionConfig.h"
 #include "../../include/dataset.h"
 #include "../../include/datasetValidator.h"
@@ -88,16 +89,16 @@ int main (int argc, char **argv)
 
 int processDataCommand(int argc, char **argv)
 {
-	char *errorMessage = (char *)malloc(sizeof(char) * MAX_MESSAGE_LENGTH);
+	errorMessage = (char *)malloc(sizeof(char) * MAX_ERROR_LENGTH);
 
-	if(!dat_isValid(argv, errorMessage))
+	if(!dat_isValid(argv))
 	{
 		printf("%s", errorMessage);
 		free(errorMessage);
 		return EXIT_FAILURE;
 	}
 	
-	if(!dat_createDataset(argv, errorMessage))
+	if(!dat_createDataset(argv))
 	{
 		printf("%s", errorMessage);
 		free(errorMessage);

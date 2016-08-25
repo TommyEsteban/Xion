@@ -17,6 +17,6 @@
 
 #define MAX_PATH_CHARACTERS 1024
 
-bool dat_isValid(char **arguments, char *errorMessage);
+bool dat_isValid(char **arguments);
 
 #endif

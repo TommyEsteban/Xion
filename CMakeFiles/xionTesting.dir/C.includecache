@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tommy/Workspace/Xion/include/integralImage.h
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+string.h
+-
+xionTypes.h
+/home/tommy/Workspace/Xion/include/xionTypes.h
+xionMessages.h
+/home/tommy/Workspace/Xion/include/xionMessages.h
+
+/home/tommy/Workspace/Xion/include/xionMessages.h
+
+/home/tommy/Workspace/Xion/include/xionTypes.h
+
+/home/tommy/Workspace/Xion/modules/preprocessing/integralImage.c
+../../include/integralImage.h
+/home/tommy/Workspace/Xion/include/integralImage.h
+

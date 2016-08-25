@@ -1,0 +1,38 @@
+Start testing: Aug 24 21:54 COT
+----------------------------------------------------------
+1/2 Testing: dataset
+1/2 Test: dataset
+Command: "/home/tommy/Workspace/Xion/bin/xionTest" "dataset"
+Directory: /home/tommy/Workspace/Xion
+"dataset" start time: Aug 24 21:54 COT
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"dataset" end time: Aug 24 21:54 COT
+"dataset" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: preprocessing
+2/2 Test: preprocessing
+Command: "/home/tommy/Workspace/Xion/bin/xionTest" "preprocessing"
+Directory: /home/tommy/Workspace/Xion
+"preprocessing" start time: Aug 24 21:54 COT
+Output:
+----------------------------------------------------------
+the image to compute the integral is null
+the integral pointer is null
+the squared integral pointer is null
+the number of pixels and width of the input image cannot be zero
+the resolution of the gray scale image cannot be greater than 1920 X 1080
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"preprocessing" end time: Aug 24 21:54 COT
+"preprocessing" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Aug 24 21:54 COT
