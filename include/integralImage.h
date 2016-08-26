@@ -21,10 +21,10 @@
 #define MAX_WIDTH_RESOLUTION 240
 #define MAX_HEIGHT_RESOLUTION 120
 
-// compute integral and squared integral images computed, n is the total number of pixels
+// compute integral and squared integral images computed, pixels is the total number of pixels
 // the width is the image width; image contains the gray pixels values, the results will be
 // loaded in the integral and squaredIntegral pointers
-void computeIntegrals(ubyte *image, int *integral, int *squaredIntegral, uint n, uint width);
+void computeIntegrals(ubyte *image, int *integral, int *squaredIntegral, uint pixels, uint width);
 
 #endif
 

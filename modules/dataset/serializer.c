@@ -1,13 +1,14 @@
 /**
-* serializer.h
-* Guardian Kids
 * NestNet Group
+* Xion Object Detection Framework
+* serializer.c
+* performs data serialization in images and text files
 */
 
 #include "../../include/serializer.h"
 
 // this pointer keeps all the raw data of the current image being read
-unsigned char *raw_image;
+ubyte *raw_image;
 
 int counter = 0;	// to count the number of files
 int width = 0;		// the width of the current image being read
@@ -54,7 +55,7 @@ void serializeToFile(char *destinationFile, char *additionalData)
 	fclose(output);
 }
 
-void appendToFile(char *destinationFile, float *data, unsigned int n)
+void ser_appendToFile(char *destinationFile, float *data, uint n)
 {
 	// warn the user that the data will be appended if destination file already exist
 	//if(counter == 2)
@@ -86,7 +87,7 @@ void appendToFile(char *destinationFile, float *data, unsigned int n)
 	fclose(output);
 }
 
-void appendToFileInt(char *destinationFile, int *data, unsigned int n)
+void appendToFileInt(char *destinationFile, int *data, uint n)
 {
 	// warn the user that the data will be appended if destination file already exist
 	//if(counter == 2)
@@ -109,7 +110,7 @@ void appendToFileInt(char *destinationFile, int *data, unsigned int n)
 	}
 	
 	// iterate for all points of data and write to the file
-	for(unsigned int i = 0; i < n; i ++)
+	for(uint i = 0; i < n; i ++)
 	{
 		fprintf(output, "%d ", data[i]);
 	}
@@ -118,7 +119,7 @@ void appendToFileInt(char *destinationFile, int *data, unsigned int n)
 	fclose(output);
 }
 
-/*void readJpegFile(char *filename)
+void ser_readJpegFile(char *filename, unsigned char **data, int *components)
 {
 	// these are standard libjpeg structures for reading(decompression) 
 	struct jpeg_decompress_struct cinfo;
@@ -155,71 +156,7 @@ void appendToFileInt(char *destinationFile, int *data, unsigned int n)
 	// allocate memory to hold the uncompressed image 
 	width = cinfo.output_width;
 	height = cinfo.output_height;
-	components = cinfo.num_components;
-	total = cinfo.output_width * cinfo.output_height * cinfo.num_components;
-	totalScanline = cinfo.output_width * cinfo.num_components;
-	//printf("width: %d, height: %d, components: %d\n", width, height, components);
-	raw_image = (unsigned char*)malloc(total);
 	
-	if(raw_image == NULL)
-		return;
-	
-	// now actually read the jpeg into the raw buffer 
-	row_pointer[0] = (unsigned char *)malloc(cinfo.output_width * cinfo.num_components);
-	
-	// read one scan line at a time 
-	while(cinfo.output_scanline < cinfo.image_height)
-	{
-		jpeg_read_scanlines(&cinfo, row_pointer, 1);
-		for(i = 0; i < totalScanline; i++) 
-			raw_image[location++] = row_pointer[0][i];
-	}
-	
-	// wrap up decompression, destroy objects, free pointers and close open files
-	jpeg_finish_decompress(&cinfo);
-	jpeg_destroy_decompress(&cinfo);
-	free(row_pointer[0]);
-	fclose(infile);
-}*/
-
-void readJpegFile(char *filename, unsigned char **data, int *components)
-{
-	// these are standard libjpeg structures for reading(decompression) 
-	struct jpeg_decompress_struct cinfo;
-	struct jpeg_error_mgr jerr;
-	
-	// libjpeg data structure for storing one row, that is, scanline of an image 
-	JSAMPROW row_pointer[1];
-	
-	FILE *infile = fopen(filename, "rb");
-	unsigned long location = 0;
-	int i = 0;
-	
-	if ( !infile )
-	{
-		printf("Error opening jpeg file %s!\n", filename);
-		return;
-	}
-	
-	// here we set up the standard libjpeg error handler 
-	cinfo.err = jpeg_std_error(&jerr);
-	
-	// setup decompression process and source, then read JPEG header 
-	jpeg_create_decompress(&cinfo);
-	
-	// this makes the library read from infile 
-	jpeg_stdio_src(&cinfo, infile);
-	
-	// reading the image header which contains image information 
-	jpeg_read_header(&cinfo, TRUE);
-	
-	// Start decompression jpeg here 
-	jpeg_start_decompress(&cinfo);
-
-	// allocate memory to hold the uncompressed image 
-	width = cinfo.output_width;
-	height = cinfo.output_height;
-	//components = cinfo.num_components;
 	(*components) = cinfo.num_components;
 	total = cinfo.output_width * cinfo.output_height * cinfo.num_components;
 	totalScanline = cinfo.output_width * cinfo.num_components;
@@ -247,7 +184,7 @@ void readJpegFile(char *filename, unsigned char **data, int *components)
 	fclose(infile);
 }
 
-void writeJpegFile(char *destinationFile, unsigned char *pixels, int w, int h, int b)
+void writeJpegFile(char *destinationFile, ubyte *pixels, int w, int h, int b)
 {
 	struct jpeg_compress_struct cinfo;
 	struct jpeg_error_mgr jerr;
@@ -281,7 +218,7 @@ void writeJpegFile(char *destinationFile, unsigned char *pixels, int w, int h, i
 	jpeg_start_compress(&cinfo, TRUE);
 	
 	/* like reading a file, this time write one row at a time */
-	while( cinfo.next_scanline < cinfo.image_height )
+	while(cinfo.next_scanline < cinfo.image_height)
 	{
 		row_pointer[0] = &pixels[cinfo.next_scanline * cinfo.image_width *  cinfo.input_components];
 		jpeg_write_scanlines(&cinfo, row_pointer, 1);
@@ -292,55 +229,6 @@ void writeJpegFile(char *destinationFile, unsigned char *pixels, int w, int h, i
 	jpeg_destroy_compress( &cinfo );
 	fclose( outfile );
 }
-
-/*void appendImageData(char *sourceFolder, char *destinationFile, char *additionalData)
-{
-	DIR *dir;
-	struct dirent *ent;
-	counter = 0;
-	
-	if ((dir = opendir (sourceFolder)) != NULL) 
-	{
-		// read files in the directory one by one
-		while ((ent = readdir (dir)) != NULL) 
-		{
-			// skip . and .. entries
-			if(strcmp(ent->d_name, ".") != 0 && strcmp(ent->d_name, "..") != 0)
-			{
-				int len1 = strlen(sourceFolder);
-				int len2 = strlen(ent->d_name);
-				
-				// variable to concat the directory with the file name
-				char *filePath = (char *)malloc(len1 + len2 + 2);
-				
-				if(filePath == NULL)
-					return;
-					
-				strcpy(filePath, sourceFolder);
-				strcat(filePath, "/");
-				strcat(filePath, ent->d_name);
-				//printf("%d %s\n", counter + 1, filePath);
-
-				readJpegFile(filePath);
-				serializeToFile(destinationFile, additionalData);
-				//printf ("%d %d %d %d %d %d\n", raw_image[0], raw_image[1], raw_image[2], raw_image[3], raw_image[4], raw_image[5]);
-				free(raw_image);
-				
-				free(filePath);
-				counter++;
-			}
-		}
-		
-		closedir (dir);
-	} 
-	else 
-	{
-		printf("Could not open directory.\n");
-		return;
-	}
-	
-	printf("Serialized %d image files.\n", counter);
-}*/
 
 void serializeValues(int a, float b, int c, char *destinationFile)
 {
@@ -362,7 +250,7 @@ void serializeValues(int a, float b, int c, char *destinationFile)
 	fclose(output);
 }
 
-void serializeArray(float *a, unsigned int size, char *destinationFile)
+void serializeArray(float *a, uint size, char *destinationFile)
 {
 	// open the file for appending data
 	FILE *output = fopen(destinationFile, "a");

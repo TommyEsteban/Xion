@@ -259,6 +259,33 @@ modules/dataset/serializer.c.s:
 	$(MAKE) -f CMakeFiles/xionTesting.dir/build.make CMakeFiles/xionTesting.dir/modules/dataset/serializer.c.s
 .PHONY : modules/dataset/serializer.c.s
 
+modules/dataset/xionio.o: modules/dataset/xionio.c.o
+.PHONY : modules/dataset/xionio.o
+
+# target to build an object file
+modules/dataset/xionio.c.o:
+	$(MAKE) -f CMakeFiles/xion.dir/build.make CMakeFiles/xion.dir/modules/dataset/xionio.c.o
+	$(MAKE) -f CMakeFiles/xionTesting.dir/build.make CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.o
+.PHONY : modules/dataset/xionio.c.o
+
+modules/dataset/xionio.i: modules/dataset/xionio.c.i
+.PHONY : modules/dataset/xionio.i
+
+# target to preprocess a source file
+modules/dataset/xionio.c.i:
+	$(MAKE) -f CMakeFiles/xion.dir/build.make CMakeFiles/xion.dir/modules/dataset/xionio.c.i
+	$(MAKE) -f CMakeFiles/xionTesting.dir/build.make CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.i
+.PHONY : modules/dataset/xionio.c.i
+
+modules/dataset/xionio.s: modules/dataset/xionio.c.s
+.PHONY : modules/dataset/xionio.s
+
+# target to generate assembly for a file
+modules/dataset/xionio.c.s:
+	$(MAKE) -f CMakeFiles/xion.dir/build.make CMakeFiles/xion.dir/modules/dataset/xionio.c.s
+	$(MAKE) -f CMakeFiles/xionTesting.dir/build.make CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.s
+.PHONY : modules/dataset/xionio.c.s
+
 modules/features/haarFeature.o: modules/features/haarFeature.c.o
 .PHONY : modules/features/haarFeature.o
 
@@ -595,6 +622,30 @@ test/main.c.s:
 	$(MAKE) -f CMakeFiles/xionTest.dir/build.make CMakeFiles/xionTest.dir/test/main.c.s
 .PHONY : test/main.c.s
 
+test/normalizationTest.o: test/normalizationTest.c.o
+.PHONY : test/normalizationTest.o
+
+# target to build an object file
+test/normalizationTest.c.o:
+	$(MAKE) -f CMakeFiles/xionTest.dir/build.make CMakeFiles/xionTest.dir/test/normalizationTest.c.o
+.PHONY : test/normalizationTest.c.o
+
+test/normalizationTest.i: test/normalizationTest.c.i
+.PHONY : test/normalizationTest.i
+
+# target to preprocess a source file
+test/normalizationTest.c.i:
+	$(MAKE) -f CMakeFiles/xionTest.dir/build.make CMakeFiles/xionTest.dir/test/normalizationTest.c.i
+.PHONY : test/normalizationTest.c.i
+
+test/normalizationTest.s: test/normalizationTest.c.s
+.PHONY : test/normalizationTest.s
+
+# target to generate assembly for a file
+test/normalizationTest.c.s:
+	$(MAKE) -f CMakeFiles/xionTest.dir/build.make CMakeFiles/xionTest.dir/test/normalizationTest.c.s
+.PHONY : test/normalizationTest.c.s
+
 test/preprocessingTest.o: test/preprocessingTest.c.o
 .PHONY : test/preprocessingTest.o
 
@@ -643,6 +694,9 @@ help:
 	@echo "... modules/dataset/serializer.o"
 	@echo "... modules/dataset/serializer.i"
 	@echo "... modules/dataset/serializer.s"
+	@echo "... modules/dataset/xionio.o"
+	@echo "... modules/dataset/xionio.i"
+	@echo "... modules/dataset/xionio.s"
 	@echo "... modules/features/haarFeature.o"
 	@echo "... modules/features/haarFeature.i"
 	@echo "... modules/features/haarFeature.s"
@@ -682,6 +736,9 @@ help:
 	@echo "... test/main.o"
 	@echo "... test/main.i"
 	@echo "... test/main.s"
+	@echo "... test/normalizationTest.o"
+	@echo "... test/normalizationTest.i"
+	@echo "... test/normalizationTest.s"
 	@echo "... test/preprocessingTest.o"
 	@echo "... test/preprocessingTest.i"
 	@echo "... test/preprocessingTest.s"

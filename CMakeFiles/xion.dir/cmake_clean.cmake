@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/xion.dir/modules/dataset/dataset.c.o"
   "CMakeFiles/xion.dir/modules/dataset/datasetValidator.c.o"
   "CMakeFiles/xion.dir/modules/dataset/serializer.c.o"
+  "CMakeFiles/xion.dir/modules/dataset/xionio.c.o"
   "CMakeFiles/xion.dir/modules/dataset/datasetController.c.o"
   "CMakeFiles/xion.dir/modules/reporting/timeEval.c.o"
   "CMakeFiles/xion.dir/modules/preprocessing/integralImage.c.o"

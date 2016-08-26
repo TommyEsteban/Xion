@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/tommy/Workspace/Xion/test/datasetValidatorTest.c" "/home/tommy/Workspace/Xion/CMakeFiles/xionTest.dir/test/datasetValidatorTest.c.o"
   "/home/tommy/Workspace/Xion/test/integralImageTest.c" "/home/tommy/Workspace/Xion/CMakeFiles/xionTest.dir/test/integralImageTest.c.o"
   "/home/tommy/Workspace/Xion/test/main.c" "/home/tommy/Workspace/Xion/CMakeFiles/xionTest.dir/test/main.c.o"
+  "/home/tommy/Workspace/Xion/test/normalizationTest.c" "/home/tommy/Workspace/Xion/CMakeFiles/xionTest.dir/test/normalizationTest.c.o"
   "/home/tommy/Workspace/Xion/test/preprocessingTest.c" "/home/tommy/Workspace/Xion/CMakeFiles/xionTest.dir/test/preprocessingTest.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

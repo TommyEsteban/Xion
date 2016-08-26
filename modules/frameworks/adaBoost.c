@@ -444,7 +444,7 @@ void updateWeights(unsigned int iterationIndex, WeakClassifier *classifier, Bina
 
 	for(unsigned int i = 0; i < dataset->n; i++)
 	{
-		UBYTE prediction = classifyWeakly(dataset->XP, i, classifier);
+		UBYTE prediction = classifyWeakly(dataset->X, i, classifier);
 		
 		// when the prediction is correct, the weight is decreased by beta factor
 		if(prediction == dataset->Y[i])
@@ -522,7 +522,7 @@ void trainAdaBoostSequential(unsigned int numOfFeatures, BinaryDataset *dataset,
 				for(unsigned int i = 0; i < dataset->n; i++)
 				{
 					indexes[i] = i;
-					g[i] = computeFeatureValue(&features[f], dataset->XP, i, dataset->d);
+					g[i] = computeFeatureValue(&features[f], dataset->X, i, dataset->d);
 				}
 				
 				// sort the feature values and the indexes
@@ -643,7 +643,7 @@ void trainAdaBoostInParallel(unsigned int numOfFeatures, BinaryDataset *dataset,
 	
 	//allocate necesary memory for parallelization
 	
-	initParallelization(dataset->XP, dataset->Y, dataset->n, dataset->d);
+	initParallelization(dataset->X, dataset->Y, dataset->n, dataset->d);
     
 	//unsigned int j = 0;		// the index of the lower error found
 	float error = 0.0;		// error calculation
@@ -867,7 +867,7 @@ void testAdaBoost(BinaryDataset **testDataset, char *classifiersFile, unsigned i
 
 	for(unsigned int i = 0; i < n; i++)
 	{
-		prediction = classifyAdaBoost((*testDataset)->XP, i, finalClassifier);
+		prediction = classifyAdaBoost((*testDataset)->X, i, finalClassifier);
 		//prediction = classifyAdaBoost((*testDataset)->XN[i], finalClassifier);
 		//printf("%d prediction: %d, reality: %d\n", i, prediction, (*testDataset)->Y[i]);
 		if(prediction == (*testDataset)->Y[i])

@@ -25,16 +25,24 @@ normalization.h
 /home/tommy/Workspace/Xion/include/normalization.h
 
 /home/tommy/Workspace/Xion/include/datasetController.h
+unistd.h
+-
 stdbool.h
 -
 dirent.h
 -
+string.h
+-
 errno.h
+-
+libgen.h
 -
 xionTypes.h
 /home/tommy/Workspace/Xion/include/xionTypes.h
 xionMessages.h
 /home/tommy/Workspace/Xion/include/xionMessages.h
+xionio.h
+/home/tommy/Workspace/Xion/include/xionio.h
 dataset.h
 /home/tommy/Workspace/Xion/include/dataset.h
 
@@ -71,8 +79,16 @@ stdio.h
 -
 stdlib.h
 -
+stdbool.h
+-
+string.h
+-
 math.h
 -
+xionTypes.h
+/home/tommy/Workspace/Xion/include/xionTypes.h
+xionMessages.h
+/home/tommy/Workspace/Xion/include/xionMessages.h
 
 /home/tommy/Workspace/Xion/include/serializer.h
 stdio.h
@@ -85,20 +101,40 @@ string.h
 -
 jpeglib.h
 -
+xionTypes.h
+/home/tommy/Workspace/Xion/include/xionTypes.h
 
 /home/tommy/Workspace/Xion/include/xionMessages.h
 
 /home/tommy/Workspace/Xion/include/xionTypes.h
 
-/home/tommy/Workspace/Xion/test/main.c
+/home/tommy/Workspace/Xion/include/xionio.h
 stdio.h
 -
-stdlib.h
+unistd.h
 -
 stdbool.h
 -
+dirent.h
+-
 string.h
 -
+errno.h
+-
+libgen.h
+-
+xionTypes.h
+/home/tommy/Workspace/Xion/include/xionTypes.h
+xionMessages.h
+/home/tommy/Workspace/Xion/include/xionMessages.h
+
+/home/tommy/Workspace/Xion/test/datasetControllerTest.c
+xionTest.h
+/home/tommy/Workspace/Xion/test/xionTest.h
+datasetTest.h
+/home/tommy/Workspace/Xion/test/datasetTest.h
+
+/home/tommy/Workspace/Xion/test/datasetTest.h
 xionTest.h
 /home/tommy/Workspace/Xion/test/xionTest.h
 
@@ -111,10 +147,14 @@ stdbool.h
 -
 string.h
 -
+dirent.h
+-
 ../include/xionTypes.h
 /home/tommy/Workspace/Xion/include/xionTypes.h
 ../include/xionMessages.h
 /home/tommy/Workspace/Xion/include/xionMessages.h
+../include/xionio.h
+/home/tommy/Workspace/Xion/include/xionio.h
 ../include/dataset.h
 /home/tommy/Workspace/Xion/include/dataset.h
 ../include/datasetController.h
@@ -123,6 +163,8 @@ string.h
 /home/tommy/Workspace/Xion/include/datasetValidator.h
 ../include/integralImage.h
 /home/tommy/Workspace/Xion/include/integralImage.h
+../include/normalization.h
+/home/tommy/Workspace/Xion/include/normalization.h
 
 /usr/local/include/jconfig.h
 

@@ -121,7 +121,7 @@ void computeDetectionRate(BinaryDataset *vDataset, float *d, float *fp)
 
 	for(int i = 0; i < n; i++)
 	{
-		UBYTE prediction = predictWithCascade(vDataset->XP, i, layers + 1, &cascadeClassifier);
+		UBYTE prediction = predictWithCascade(vDataset->X, i, layers + 1, &cascadeClassifier);
 		//printf("%d prediction: %d, reality: %d\n", i, prediction, vDataset->Y[i]);
 		if(prediction == vDataset->Y[i] && prediction == 1)
 			truePositives++;
@@ -142,7 +142,7 @@ bool remakeNegativeSamples(BinaryDataset *tDataset)
 	// get all predictions
     for(unsigned int i = 0; i < tDataset->n; i++)
 	{
-		predictions[i] = predictWithCascade(tDataset->XP, i, layers, &cascadeClassifier);
+		predictions[i] = predictWithCascade(tDataset->X, i, layers, &cascadeClassifier);
 		//printf("%d prediction: %d, reality: %d\n", i, prediction, tDataset->Y[i]);
 		
 		// count false positives
@@ -201,7 +201,7 @@ bool remakeNegativeSamples(BinaryDataset *tDataset)
 			int stride = tDataset->p * counter;
 			//printf("%d stride: %d\n", counter, stride);
 			for(unsigned int p = stride; p < stride + tDataset->p; p++)
-				XCopy[p] = tDataset->XP[p];
+				XCopy[p] = tDataset->X[p];
 			
 			YCopy[counter] = tDataset->Y[i];
             counter++;
@@ -219,7 +219,7 @@ bool remakeNegativeSamples(BinaryDataset *tDataset)
 				int stride = tDataset->p * i;
 			
 				for(unsigned int p = stride; p < stride + tDataset->p; p++)
-					XCopy[p] = tDataset->XP[p];
+					XCopy[p] = tDataset->X[p];
 				
 				YCopy[counter] = tDataset->Y[i];
 				counter++;
@@ -248,7 +248,7 @@ bool remakeNegativeSamples(BinaryDataset *tDataset)
 	
     printf("defining new dataset\n");
     // replace the dataset with the new data
-    tDataset->XP = XCopy;
+    tDataset->X = XCopy;
     tDataset->Y = YCopy;
     tDataset->n0 = fpCounter + extra;
     tDataset->n = counter;
@@ -440,7 +440,7 @@ void testCascadeClassifier(BinaryDataset **testDataset, char *baseClassifiersFil
 	
 	for(unsigned int i = 0; i < (*testDataset)->n; i++)
 	{
-        prediction = predictWithCascade((*testDataset)->XP, i, layers, &cascadeClassifier);
+        prediction = predictWithCascade((*testDataset)->X, i, layers, &cascadeClassifier);
 		//printf("%d prediction: %d, reality: %d\n", i, prediction, (*testDataset)->Y[i]);
 		if(prediction == (*testDataset)->Y[i])
 		{

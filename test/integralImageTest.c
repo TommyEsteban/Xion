@@ -19,9 +19,11 @@ int computeIntegrals_nullImage_returnErrorMessage()
     // assert
     if(strcmp(NULL_IMAGE, errorMessage) == 0)
     {
+        releasePreproTest();
         return EXIT_SUCCESS;
     }
 
+    releasePreproTest();
     return EXIT_FAILURE;
 }
 
@@ -37,11 +39,11 @@ int computeIntegrals_nullIntegral_returnErrorMessage()
     // assert
     if(strcmp(NULL_INTEGRAL_POINTER, errorMessage) == 0)
     {
-        free(image);
+        releasePreproTest();
         return EXIT_SUCCESS;
     }
 
-    free(image);
+    releasePreproTest();
     return EXIT_FAILURE;
 }
 
@@ -58,13 +60,11 @@ int computeIntegrals_nullSquared_returnErrorMessage()
     // assert
     if(strcmp(NULL_SQUARED_POINTER, errorMessage) == 0)
     {
-        free(image);
-        free(integral);
+        releasePreproTest();
         return EXIT_SUCCESS;
     }
 
-    free(image);
-    free(integral);
+    releasePreproTest();
     return EXIT_FAILURE;
 }
 

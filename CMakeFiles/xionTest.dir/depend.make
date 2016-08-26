@@ -9,6 +9,7 @@ CMakeFiles/xionTest.dir/test/datasetControllerTest.c.o: include/normalization.h
 CMakeFiles/xionTest.dir/test/datasetControllerTest.c.o: include/serializer.h
 CMakeFiles/xionTest.dir/test/datasetControllerTest.c.o: include/xionMessages.h
 CMakeFiles/xionTest.dir/test/datasetControllerTest.c.o: include/xionTypes.h
+CMakeFiles/xionTest.dir/test/datasetControllerTest.c.o: include/xionio.h
 CMakeFiles/xionTest.dir/test/datasetControllerTest.c.o: test/datasetControllerTest.c
 CMakeFiles/xionTest.dir/test/datasetControllerTest.c.o: test/datasetTest.h
 CMakeFiles/xionTest.dir/test/datasetControllerTest.c.o: test/xionTest.h
@@ -25,6 +26,7 @@ CMakeFiles/xionTest.dir/test/datasetTest.c.o: include/normalization.h
 CMakeFiles/xionTest.dir/test/datasetTest.c.o: include/serializer.h
 CMakeFiles/xionTest.dir/test/datasetTest.c.o: include/xionMessages.h
 CMakeFiles/xionTest.dir/test/datasetTest.c.o: include/xionTypes.h
+CMakeFiles/xionTest.dir/test/datasetTest.c.o: include/xionio.h
 CMakeFiles/xionTest.dir/test/datasetTest.c.o: test/datasetTest.c
 CMakeFiles/xionTest.dir/test/datasetTest.c.o: test/datasetTest.h
 CMakeFiles/xionTest.dir/test/datasetTest.c.o: test/xionTest.h
@@ -41,6 +43,7 @@ CMakeFiles/xionTest.dir/test/datasetValidatorTest.c.o: include/normalization.h
 CMakeFiles/xionTest.dir/test/datasetValidatorTest.c.o: include/serializer.h
 CMakeFiles/xionTest.dir/test/datasetValidatorTest.c.o: include/xionMessages.h
 CMakeFiles/xionTest.dir/test/datasetValidatorTest.c.o: include/xionTypes.h
+CMakeFiles/xionTest.dir/test/datasetValidatorTest.c.o: include/xionio.h
 CMakeFiles/xionTest.dir/test/datasetValidatorTest.c.o: test/datasetTest.h
 CMakeFiles/xionTest.dir/test/datasetValidatorTest.c.o: test/datasetValidatorTest.c
 CMakeFiles/xionTest.dir/test/datasetValidatorTest.c.o: test/xionTest.h
@@ -57,6 +60,7 @@ CMakeFiles/xionTest.dir/test/integralImageTest.c.o: include/normalization.h
 CMakeFiles/xionTest.dir/test/integralImageTest.c.o: include/serializer.h
 CMakeFiles/xionTest.dir/test/integralImageTest.c.o: include/xionMessages.h
 CMakeFiles/xionTest.dir/test/integralImageTest.c.o: include/xionTypes.h
+CMakeFiles/xionTest.dir/test/integralImageTest.c.o: include/xionio.h
 CMakeFiles/xionTest.dir/test/integralImageTest.c.o: test/integralImageTest.c
 CMakeFiles/xionTest.dir/test/integralImageTest.c.o: test/preprocessingTest.h
 CMakeFiles/xionTest.dir/test/integralImageTest.c.o: test/xionTest.h
@@ -73,12 +77,30 @@ CMakeFiles/xionTest.dir/test/main.c.o: include/normalization.h
 CMakeFiles/xionTest.dir/test/main.c.o: include/serializer.h
 CMakeFiles/xionTest.dir/test/main.c.o: include/xionMessages.h
 CMakeFiles/xionTest.dir/test/main.c.o: include/xionTypes.h
+CMakeFiles/xionTest.dir/test/main.c.o: include/xionio.h
 CMakeFiles/xionTest.dir/test/main.c.o: test/main.c
 CMakeFiles/xionTest.dir/test/main.c.o: test/xionTest.h
 CMakeFiles/xionTest.dir/test/main.c.o: /usr/local/include/jconfig.h
 CMakeFiles/xionTest.dir/test/main.c.o: /usr/local/include/jerror.h
 CMakeFiles/xionTest.dir/test/main.c.o: /usr/local/include/jmorecfg.h
 CMakeFiles/xionTest.dir/test/main.c.o: /usr/local/include/jpeglib.h
+
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o: include/dataset.h
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o: include/datasetController.h
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o: include/datasetValidator.h
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o: include/integralImage.h
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o: include/normalization.h
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o: include/serializer.h
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o: include/xionMessages.h
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o: include/xionTypes.h
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o: include/xionio.h
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o: test/normalizationTest.c
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o: test/preprocessingTest.h
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o: test/xionTest.h
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o: /usr/local/include/jconfig.h
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o: /usr/local/include/jerror.h
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o: /usr/local/include/jmorecfg.h
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o: /usr/local/include/jpeglib.h
 
 CMakeFiles/xionTest.dir/test/preprocessingTest.c.o: include/dataset.h
 CMakeFiles/xionTest.dir/test/preprocessingTest.c.o: include/datasetController.h
@@ -88,6 +110,7 @@ CMakeFiles/xionTest.dir/test/preprocessingTest.c.o: include/normalization.h
 CMakeFiles/xionTest.dir/test/preprocessingTest.c.o: include/serializer.h
 CMakeFiles/xionTest.dir/test/preprocessingTest.c.o: include/xionMessages.h
 CMakeFiles/xionTest.dir/test/preprocessingTest.c.o: include/xionTypes.h
+CMakeFiles/xionTest.dir/test/preprocessingTest.c.o: include/xionio.h
 CMakeFiles/xionTest.dir/test/preprocessingTest.c.o: test/preprocessingTest.c
 CMakeFiles/xionTest.dir/test/preprocessingTest.c.o: test/preprocessingTest.h
 CMakeFiles/xionTest.dir/test/preprocessingTest.c.o: test/xionTest.h

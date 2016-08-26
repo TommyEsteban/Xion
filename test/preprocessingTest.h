@@ -10,9 +10,11 @@
 
 #include "xionTest.h"
 
+char *imageName;
 ubyte *image;
 int *integral;
 int *squared;
+float *normalization;
 
 void initializePreproTestNull();
 

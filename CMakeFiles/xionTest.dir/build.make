@@ -141,9 +141,32 @@ CMakeFiles/xionTest.dir/test/preprocessingTest.c.o.provides: CMakeFiles/xionTest
 
 CMakeFiles/xionTest.dir/test/preprocessingTest.c.o.provides.build: CMakeFiles/xionTest.dir/test/preprocessingTest.c.o
 
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o: CMakeFiles/xionTest.dir/flags.make
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o: test/normalizationTest.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/xionTest.dir/test/normalizationTest.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/xionTest.dir/test/normalizationTest.c.o   -c /home/tommy/Workspace/Xion/test/normalizationTest.c
+
+CMakeFiles/xionTest.dir/test/normalizationTest.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/xionTest.dir/test/normalizationTest.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /home/tommy/Workspace/Xion/test/normalizationTest.c > CMakeFiles/xionTest.dir/test/normalizationTest.c.i
+
+CMakeFiles/xionTest.dir/test/normalizationTest.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/xionTest.dir/test/normalizationTest.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /home/tommy/Workspace/Xion/test/normalizationTest.c -o CMakeFiles/xionTest.dir/test/normalizationTest.c.s
+
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o.requires:
+.PHONY : CMakeFiles/xionTest.dir/test/normalizationTest.c.o.requires
+
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o.provides: CMakeFiles/xionTest.dir/test/normalizationTest.c.o.requires
+	$(MAKE) -f CMakeFiles/xionTest.dir/build.make CMakeFiles/xionTest.dir/test/normalizationTest.c.o.provides.build
+.PHONY : CMakeFiles/xionTest.dir/test/normalizationTest.c.o.provides
+
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o.provides.build: CMakeFiles/xionTest.dir/test/normalizationTest.c.o
+
 CMakeFiles/xionTest.dir/test/datasetControllerTest.c.o: CMakeFiles/xionTest.dir/flags.make
 CMakeFiles/xionTest.dir/test/datasetControllerTest.c.o: test/datasetControllerTest.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/xionTest.dir/test/datasetControllerTest.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/xionTest.dir/test/datasetControllerTest.c.o   -c /home/tommy/Workspace/Xion/test/datasetControllerTest.c
 
@@ -166,7 +189,7 @@ CMakeFiles/xionTest.dir/test/datasetControllerTest.c.o.provides.build: CMakeFile
 
 CMakeFiles/xionTest.dir/test/main.c.o: CMakeFiles/xionTest.dir/flags.make
 CMakeFiles/xionTest.dir/test/main.c.o: test/main.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/xionTest.dir/test/main.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/xionTest.dir/test/main.c.o   -c /home/tommy/Workspace/Xion/test/main.c
 
@@ -193,6 +216,7 @@ xionTest_OBJECTS = \
 "CMakeFiles/xionTest.dir/test/datasetTest.c.o" \
 "CMakeFiles/xionTest.dir/test/datasetValidatorTest.c.o" \
 "CMakeFiles/xionTest.dir/test/preprocessingTest.c.o" \
+"CMakeFiles/xionTest.dir/test/normalizationTest.c.o" \
 "CMakeFiles/xionTest.dir/test/datasetControllerTest.c.o" \
 "CMakeFiles/xionTest.dir/test/main.c.o"
 
@@ -203,6 +227,7 @@ bin/xionTest: CMakeFiles/xionTest.dir/test/integralImageTest.c.o
 bin/xionTest: CMakeFiles/xionTest.dir/test/datasetTest.c.o
 bin/xionTest: CMakeFiles/xionTest.dir/test/datasetValidatorTest.c.o
 bin/xionTest: CMakeFiles/xionTest.dir/test/preprocessingTest.c.o
+bin/xionTest: CMakeFiles/xionTest.dir/test/normalizationTest.c.o
 bin/xionTest: CMakeFiles/xionTest.dir/test/datasetControllerTest.c.o
 bin/xionTest: CMakeFiles/xionTest.dir/test/main.c.o
 bin/xionTest: CMakeFiles/xionTest.dir/build.make
@@ -222,6 +247,7 @@ CMakeFiles/xionTest.dir/requires: CMakeFiles/xionTest.dir/test/integralImageTest
 CMakeFiles/xionTest.dir/requires: CMakeFiles/xionTest.dir/test/datasetTest.c.o.requires
 CMakeFiles/xionTest.dir/requires: CMakeFiles/xionTest.dir/test/datasetValidatorTest.c.o.requires
 CMakeFiles/xionTest.dir/requires: CMakeFiles/xionTest.dir/test/preprocessingTest.c.o.requires
+CMakeFiles/xionTest.dir/requires: CMakeFiles/xionTest.dir/test/normalizationTest.c.o.requires
 CMakeFiles/xionTest.dir/requires: CMakeFiles/xionTest.dir/test/datasetControllerTest.c.o.requires
 CMakeFiles/xionTest.dir/requires: CMakeFiles/xionTest.dir/test/main.c.o.requires
 .PHONY : CMakeFiles/xionTest.dir/requires

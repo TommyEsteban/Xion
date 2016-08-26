@@ -12,12 +12,15 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include <dirent.h>
 #include "../include/xionTypes.h"
 #include "../include/xionMessages.h"
+#include "../include/xionio.h"
 #include "../include/dataset.h"
 #include "../include/datasetController.h"
 #include "../include/datasetValidator.h"
 #include "../include/integralImage.h"
+#include "../include/normalization.h"
 
 //dataset tests
 int datasetValidator_folderPathNull_returnFalseAndMessage();
@@ -28,7 +31,12 @@ int datasetValidator_dimensionMaxLength_returnFalseAndMessage();
 int datasetValidator_dimensionNotNumber_returnFalseAndMessage();
 int datasetValidator_dimensionZero_returnFalseAndMessage();
 int datasetValidator_dimensionGreaterThanZero_returnTrue();
-int createDataset_notExistingFolder_returnFalseAndMessage();
+int createDataset_notExistingFolder_returnFalseAndErrorMessage();
+int createDataset_notExistingDestinationFolder_returnFalseAndErrorMessage();
+int createDataset_invalidDimension_returnFalseAndErrorMessage();
+int createDataset_oneSinglePixelImage_fileCorrectlyCreated();
+int loadDataset_onePositiveOneNegative_valuesCorrectlyLoaded();
+int loadDataset_one4X4PositiveOne4X4Negative_valuesCorrectlyLoaded();
 
 // preprocessing tests
 int computeIntegrals_nullImage_returnErrorMessage();
@@ -45,5 +53,15 @@ int computeIntegrals_image3X2_returnRightIntegrals();
 int computeIntegrals_imageMaxResolution_returnRightIntegrals();
 int computeIntegrals_imageMaxResolutionMultipleValues_returnRightIntegrals();
 int computeIntegrals_imageBiggerThanMaxResolution_returnErrorMessage();
+
+int normalization_nullImageName_returnErrorMessage();
+int normalization_nullImage_returnErrorMessage();
+int normalization_nullIntegral_returnErrorMessage();
+int normalization_nullSquared_returnErrorMessage();
+int normalization_nullNormalization_returnErrorMessage();
+int normalization_dimensionZero_returnErrorMessage();
+int normalization_image4X4PixelsInZero_normalizationZeroAndVarianceZeroWarning();
+int normalization_image4X4PixelsIn255_normalizationZero();
+int normalization_image4X4PixelsInMultipleValues_correctNormalization();
 
 #endif

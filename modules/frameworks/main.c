@@ -90,11 +90,13 @@ int main (int argc, char **argv)
 int processDataCommand(int argc, char **argv)
 {
 	errorMessage = (char *)malloc(sizeof(char) * MAX_ERROR_LENGTH);
+	warningMessage = (char *)malloc(sizeof(char) * MAX_ERROR_LENGTH);
 
 	if(!dat_isValid(argv))
 	{
 		printf("%s", errorMessage);
 		free(errorMessage);
+		free(warningMessage);
 		return EXIT_FAILURE;
 	}
 	
@@ -102,10 +104,12 @@ int processDataCommand(int argc, char **argv)
 	{
 		printf("%s", errorMessage);
 		free(errorMessage);
+		free(warningMessage);
 		return EXIT_FAILURE;
 	}
 
 	free(errorMessage);
+	free(warningMessage);
 	return EXIT_SUCCESS;
 }
 
@@ -206,14 +210,14 @@ void trainingWithAdaBoost(int argc, char **argv)
 	//normalizeByMedian(dataset);
 	//flatData(&dataset);
 	//freeIntermediateData(&dataset);
-	loadBinaryDataset(&dataset, trainingPosDataFile, trainingNegDataFile, size);
+	dat_loadFromFiles(trainingPosDataFile, trainingNegDataFile, size);
 	buildFeatures(size, size, useTrainedFeatures, featuresFolder);
 	initializeAdaBoost(numOfFeatures, dataset, mode);
 	trainAdaBoost(numOfFeatures, dataset, featuresFolder, classifiersFile, saveFeatures);
 	
 	closeAdaBoost();
 	destroyFeatures();
-	freeBinaryDataset(&dataset);
+	dat_close(dataset);
 	free(dataset);
 	free(trainingPosDataFile);
 	free(trainingNegDataFile);
@@ -273,12 +277,12 @@ void testWithAdaBoost(int argc, char **argv)
 		}
 	}
 	
-	loadBinaryDataset(&dataset, validationPosDataFile, validationNegDataFile, size);
+	dat_loadFromFiles(validationPosDataFile, validationNegDataFile, size);
 	buildFeatures(size, size, false, NULL);
 	testAdaBoost(&dataset, classifiersFile, size);
 	
 	destroyFeatures();
-	freeBinaryDataset(&dataset);
+	dat_close(dataset);
     free(dataset);
 	free(validationPosDataFile);
 	free(validationNegDataFile);
@@ -403,16 +407,16 @@ void trainingWithCascade(int argc, char **argv)
 		}
 	}
 	
-	loadBinaryDataset(&tDataset, trainingPosDataFile, trainingNegDataFile, size);
-	loadBinaryDataset(&vDataset, validationPosDataFile, validationNegDataFile, size);
+	dat_loadFromFiles(trainingPosDataFile, trainingNegDataFile, size);
+	dat_loadFromFiles(validationPosDataFile, validationNegDataFile, size);
     buildFeatures(size, size, useTrainedFeatures, featuresFolder);
     initializeCascade(MAXLAYERS);
 	trainCascadeClassifier(&tDataset, &vDataset, fi, di, Ft, featuresFolder, baseClassifiersFile, mode);
     
 	closeCascade();
     destroyFeatures();
-    freeBinaryDataset(&tDataset);
-	freeBinaryDataset(&vDataset);
+    dat_close(tDataset);
+	dat_close(vDataset);
     free(tDataset);
     free(vDataset);
 	free(trainingPosDataFile);
@@ -474,13 +478,13 @@ void testWithCascade(int argc, char **argv)
 		}
 	}
 	
-	loadBinaryDataset(&dataset, validationPosDataFile, validationNegDataFile, size);
+	dat_loadFromFiles(validationPosDataFile, validationNegDataFile, size);
 	buildFeatures(size, size, false, NULL);//printf("**: %p, *: %p, n: %d, n0: %d, n1:%d\n", &dataset, dataset, dataset->n, dataset->n0, dataset->n1);
 	testCascadeClassifier(&dataset, baseClassifiersFile, size);
 	
 	closeCascade();
 	destroyFeatures();
-	freeBinaryDataset(&dataset);
+	dat_close(dataset);
     free(dataset);
 	free(validationPosDataFile);
 	free(validationNegDataFile);

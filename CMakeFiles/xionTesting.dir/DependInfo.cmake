@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/tommy/Workspace/Xion/modules/dataset/datasetController.c" "/home/tommy/Workspace/Xion/CMakeFiles/xionTesting.dir/modules/dataset/datasetController.c.o"
   "/home/tommy/Workspace/Xion/modules/dataset/datasetValidator.c" "/home/tommy/Workspace/Xion/CMakeFiles/xionTesting.dir/modules/dataset/datasetValidator.c.o"
   "/home/tommy/Workspace/Xion/modules/dataset/serializer.c" "/home/tommy/Workspace/Xion/CMakeFiles/xionTesting.dir/modules/dataset/serializer.c.o"
+  "/home/tommy/Workspace/Xion/modules/dataset/xionio.c" "/home/tommy/Workspace/Xion/CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.o"
   "/home/tommy/Workspace/Xion/modules/features/haarFeature.c" "/home/tommy/Workspace/Xion/CMakeFiles/xionTesting.dir/modules/features/haarFeature.c.o"
   "/home/tommy/Workspace/Xion/modules/features/haarFeatureGenerator.c" "/home/tommy/Workspace/Xion/CMakeFiles/xionTesting.dir/modules/features/haarFeatureGenerator.c.o"
   "/home/tommy/Workspace/Xion/modules/frameworks/adaBoost.c" "/home/tommy/Workspace/Xion/CMakeFiles/xionTesting.dir/modules/frameworks/adaBoost.c.o"

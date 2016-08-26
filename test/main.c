@@ -52,6 +52,24 @@ int datasetTestSuite()
     if(datasetValidator_dimensionGreaterThanZero_returnTrue() == EXIT_FAILURE)
         return EXIT_FAILURE;
     
+    if(createDataset_notExistingFolder_returnFalseAndErrorMessage() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+    
+    if(createDataset_notExistingDestinationFolder_returnFalseAndErrorMessage() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+    
+    if(createDataset_invalidDimension_returnFalseAndErrorMessage() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+
+    if(createDataset_oneSinglePixelImage_fileCorrectlyCreated() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+
+    if(loadDataset_onePositiveOneNegative_valuesCorrectlyLoaded() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+
+    if(loadDataset_one4X4PositiveOne4X4Negative_valuesCorrectlyLoaded() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+    
     return EXIT_SUCCESS;
 }
 
@@ -97,6 +115,33 @@ int preprocessingTestSuit()
         return EXIT_FAILURE;
 
     if(computeIntegrals_imageBiggerThanMaxResolution_returnErrorMessage() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+    
+    if(normalization_nullImageName_returnErrorMessage() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+
+    if(normalization_nullImage_returnErrorMessage() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+    
+    if(normalization_nullIntegral_returnErrorMessage() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+    
+    if(normalization_nullSquared_returnErrorMessage() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+    
+    if(normalization_nullNormalization_returnErrorMessage() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+    
+    if(normalization_dimensionZero_returnErrorMessage() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+
+    if(normalization_image4X4PixelsInZero_normalizationZeroAndVarianceZeroWarning() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+
+    if(normalization_image4X4PixelsIn255_normalizationZero() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+    
+    if(normalization_image4X4PixelsInMultipleValues_correctNormalization() == EXIT_FAILURE)
         return EXIT_FAILURE;
 
     return EXIT_SUCCESS;

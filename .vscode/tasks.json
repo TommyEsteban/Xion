@@ -3,7 +3,10 @@
     // for the documentation about the tasks.json format
     "version": "0.1.0",
     "command": "sh",
-    "args": ["-c", "cmake . && make && valgrind ctest --output-on-failure"],
+    "args": [
+        "-c", "cmake . && make && ctest --output-on-failure && valgrind --leak-check=yes bin/xionTest dataset && valgrind --leak-check=yes bin/xionTest preprocessing && echo 'build and test done'"
+        ],
     "isShellCommand": true,
-    "showOutput": "always"
+    "showOutput": "always",
+    "echoCommand": true
 }

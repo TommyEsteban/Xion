@@ -976,9 +976,32 @@ CMakeFiles/xionTesting.dir/modules/dataset/serializer.c.o.provides: CMakeFiles/x
 
 CMakeFiles/xionTesting.dir/modules/dataset/serializer.c.o.provides.build: CMakeFiles/xionTesting.dir/modules/dataset/serializer.c.o
 
+CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.o: CMakeFiles/xionTesting.dir/flags.make
+CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.o: modules/dataset/xionio.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_10)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.o   -c /home/tommy/Workspace/Xion/modules/dataset/xionio.c
+
+CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /home/tommy/Workspace/Xion/modules/dataset/xionio.c > CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.i
+
+CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /home/tommy/Workspace/Xion/modules/dataset/xionio.c -o CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.s
+
+CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.o.requires:
+.PHONY : CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.o.requires
+
+CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.o.provides: CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.o.requires
+	$(MAKE) -f CMakeFiles/xionTesting.dir/build.make CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.o.provides.build
+.PHONY : CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.o.provides
+
+CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.o.provides.build: CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.o
+
 CMakeFiles/xionTesting.dir/modules/dataset/datasetController.c.o: CMakeFiles/xionTesting.dir/flags.make
 CMakeFiles/xionTesting.dir/modules/dataset/datasetController.c.o: modules/dataset/datasetController.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/xionTesting.dir/modules/dataset/datasetController.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/xionTesting.dir/modules/dataset/datasetController.c.o   -c /home/tommy/Workspace/Xion/modules/dataset/datasetController.c
 
@@ -1001,7 +1024,7 @@ CMakeFiles/xionTesting.dir/modules/dataset/datasetController.c.o.provides.build:
 
 CMakeFiles/xionTesting.dir/modules/reporting/timeEval.c.o: CMakeFiles/xionTesting.dir/flags.make
 CMakeFiles/xionTesting.dir/modules/reporting/timeEval.c.o: modules/reporting/timeEval.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/xionTesting.dir/modules/reporting/timeEval.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/xionTesting.dir/modules/reporting/timeEval.c.o   -c /home/tommy/Workspace/Xion/modules/reporting/timeEval.c
 
@@ -1024,7 +1047,7 @@ CMakeFiles/xionTesting.dir/modules/reporting/timeEval.c.o.provides.build: CMakeF
 
 CMakeFiles/xionTesting.dir/modules/preprocessing/integralImage.c.o: CMakeFiles/xionTesting.dir/flags.make
 CMakeFiles/xionTesting.dir/modules/preprocessing/integralImage.c.o: modules/preprocessing/integralImage.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/xionTesting.dir/modules/preprocessing/integralImage.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/xionTesting.dir/modules/preprocessing/integralImage.c.o   -c /home/tommy/Workspace/Xion/modules/preprocessing/integralImage.c
 
@@ -1047,7 +1070,7 @@ CMakeFiles/xionTesting.dir/modules/preprocessing/integralImage.c.o.provides.buil
 
 CMakeFiles/xionTesting.dir/modules/preprocessing/normalization.c.o: CMakeFiles/xionTesting.dir/flags.make
 CMakeFiles/xionTesting.dir/modules/preprocessing/normalization.c.o: modules/preprocessing/normalization.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_13)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/xionTesting.dir/modules/preprocessing/normalization.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/xionTesting.dir/modules/preprocessing/normalization.c.o   -c /home/tommy/Workspace/Xion/modules/preprocessing/normalization.c
 
@@ -1070,7 +1093,7 @@ CMakeFiles/xionTesting.dir/modules/preprocessing/normalization.c.o.provides.buil
 
 CMakeFiles/xionTesting.dir/modules/frameworks/attentionalCascade.c.o: CMakeFiles/xionTesting.dir/flags.make
 CMakeFiles/xionTesting.dir/modules/frameworks/attentionalCascade.c.o: modules/frameworks/attentionalCascade.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_14)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/xionTesting.dir/modules/frameworks/attentionalCascade.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/xionTesting.dir/modules/frameworks/attentionalCascade.c.o   -c /home/tommy/Workspace/Xion/modules/frameworks/attentionalCascade.c
 
@@ -1093,7 +1116,7 @@ CMakeFiles/xionTesting.dir/modules/frameworks/attentionalCascade.c.o.provides.bu
 
 CMakeFiles/xionTesting.dir/modules/frameworks/adaBoost.c.o: CMakeFiles/xionTesting.dir/flags.make
 CMakeFiles/xionTesting.dir/modules/frameworks/adaBoost.c.o: modules/frameworks/adaBoost.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_15)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_16)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/xionTesting.dir/modules/frameworks/adaBoost.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/xionTesting.dir/modules/frameworks/adaBoost.c.o   -c /home/tommy/Workspace/Xion/modules/frameworks/adaBoost.c
 
@@ -1116,7 +1139,7 @@ CMakeFiles/xionTesting.dir/modules/frameworks/adaBoost.c.o.provides.build: CMake
 
 CMakeFiles/xionTesting.dir/modules/frameworks/main.c.o: CMakeFiles/xionTesting.dir/flags.make
 CMakeFiles/xionTesting.dir/modules/frameworks/main.c.o: modules/frameworks/main.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_16)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/tommy/Workspace/Xion/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/xionTesting.dir/modules/frameworks/main.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/xionTesting.dir/modules/frameworks/main.c.o   -c /home/tommy/Workspace/Xion/modules/frameworks/main.c
 
@@ -1144,6 +1167,7 @@ xionTesting_OBJECTS = \
 "CMakeFiles/xionTesting.dir/modules/dataset/dataset.c.o" \
 "CMakeFiles/xionTesting.dir/modules/dataset/datasetValidator.c.o" \
 "CMakeFiles/xionTesting.dir/modules/dataset/serializer.c.o" \
+"CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.o" \
 "CMakeFiles/xionTesting.dir/modules/dataset/datasetController.c.o" \
 "CMakeFiles/xionTesting.dir/modules/reporting/timeEval.c.o" \
 "CMakeFiles/xionTesting.dir/modules/preprocessing/integralImage.c.o" \
@@ -1162,6 +1186,7 @@ lib/libxionTesting.so: CMakeFiles/xionTesting.dir/modules/features/haarFeature.c
 lib/libxionTesting.so: CMakeFiles/xionTesting.dir/modules/dataset/dataset.c.o
 lib/libxionTesting.so: CMakeFiles/xionTesting.dir/modules/dataset/datasetValidator.c.o
 lib/libxionTesting.so: CMakeFiles/xionTesting.dir/modules/dataset/serializer.c.o
+lib/libxionTesting.so: CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.o
 lib/libxionTesting.so: CMakeFiles/xionTesting.dir/modules/dataset/datasetController.c.o
 lib/libxionTesting.so: CMakeFiles/xionTesting.dir/modules/reporting/timeEval.c.o
 lib/libxionTesting.so: CMakeFiles/xionTesting.dir/modules/preprocessing/integralImage.c.o
@@ -1186,6 +1211,7 @@ CMakeFiles/xionTesting.dir/requires: CMakeFiles/xionTesting.dir/modules/features
 CMakeFiles/xionTesting.dir/requires: CMakeFiles/xionTesting.dir/modules/dataset/dataset.c.o.requires
 CMakeFiles/xionTesting.dir/requires: CMakeFiles/xionTesting.dir/modules/dataset/datasetValidator.c.o.requires
 CMakeFiles/xionTesting.dir/requires: CMakeFiles/xionTesting.dir/modules/dataset/serializer.c.o.requires
+CMakeFiles/xionTesting.dir/requires: CMakeFiles/xionTesting.dir/modules/dataset/xionio.c.o.requires
 CMakeFiles/xionTesting.dir/requires: CMakeFiles/xionTesting.dir/modules/dataset/datasetController.c.o.requires
 CMakeFiles/xionTesting.dir/requires: CMakeFiles/xionTesting.dir/modules/reporting/timeEval.c.o.requires
 CMakeFiles/xionTesting.dir/requires: CMakeFiles/xionTesting.dir/modules/preprocessing/integralImage.c.o.requires

@@ -19,8 +19,12 @@
 //char *errorMessages;
 char **arguments;
 
+BinaryDataset *sampleDataset;
+
 void initializeDatasetTest();
 
 void releaseDatasetTest();
+
+void createSampleData(char *posDir, char *negDir, char *posFile, char *negFile, char *dim);
 
 #endif

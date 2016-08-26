@@ -10,6 +10,7 @@ CMakeFiles/xionTest.dir/test/datasetControllerTest.c.o
  /home/tommy/Workspace/Xion/include/serializer.h
  /home/tommy/Workspace/Xion/include/xionMessages.h
  /home/tommy/Workspace/Xion/include/xionTypes.h
+ /home/tommy/Workspace/Xion/include/xionio.h
  /home/tommy/Workspace/Xion/test/datasetControllerTest.c
  /home/tommy/Workspace/Xion/test/datasetTest.h
  /home/tommy/Workspace/Xion/test/xionTest.h
@@ -26,6 +27,7 @@ CMakeFiles/xionTest.dir/test/datasetTest.c.o
  /home/tommy/Workspace/Xion/include/serializer.h
  /home/tommy/Workspace/Xion/include/xionMessages.h
  /home/tommy/Workspace/Xion/include/xionTypes.h
+ /home/tommy/Workspace/Xion/include/xionio.h
  /home/tommy/Workspace/Xion/test/datasetTest.c
  /home/tommy/Workspace/Xion/test/datasetTest.h
  /home/tommy/Workspace/Xion/test/xionTest.h
@@ -42,6 +44,7 @@ CMakeFiles/xionTest.dir/test/datasetValidatorTest.c.o
  /home/tommy/Workspace/Xion/include/serializer.h
  /home/tommy/Workspace/Xion/include/xionMessages.h
  /home/tommy/Workspace/Xion/include/xionTypes.h
+ /home/tommy/Workspace/Xion/include/xionio.h
  /home/tommy/Workspace/Xion/test/datasetTest.h
  /home/tommy/Workspace/Xion/test/datasetValidatorTest.c
  /home/tommy/Workspace/Xion/test/xionTest.h
@@ -58,6 +61,7 @@ CMakeFiles/xionTest.dir/test/integralImageTest.c.o
  /home/tommy/Workspace/Xion/include/serializer.h
  /home/tommy/Workspace/Xion/include/xionMessages.h
  /home/tommy/Workspace/Xion/include/xionTypes.h
+ /home/tommy/Workspace/Xion/include/xionio.h
  /home/tommy/Workspace/Xion/test/integralImageTest.c
  /home/tommy/Workspace/Xion/test/preprocessingTest.h
  /home/tommy/Workspace/Xion/test/xionTest.h
@@ -74,7 +78,25 @@ CMakeFiles/xionTest.dir/test/main.c.o
  /home/tommy/Workspace/Xion/include/serializer.h
  /home/tommy/Workspace/Xion/include/xionMessages.h
  /home/tommy/Workspace/Xion/include/xionTypes.h
+ /home/tommy/Workspace/Xion/include/xionio.h
  /home/tommy/Workspace/Xion/test/main.c
+ /home/tommy/Workspace/Xion/test/xionTest.h
+ /usr/local/include/jconfig.h
+ /usr/local/include/jerror.h
+ /usr/local/include/jmorecfg.h
+ /usr/local/include/jpeglib.h
+CMakeFiles/xionTest.dir/test/normalizationTest.c.o
+ /home/tommy/Workspace/Xion/include/dataset.h
+ /home/tommy/Workspace/Xion/include/datasetController.h
+ /home/tommy/Workspace/Xion/include/datasetValidator.h
+ /home/tommy/Workspace/Xion/include/integralImage.h
+ /home/tommy/Workspace/Xion/include/normalization.h
+ /home/tommy/Workspace/Xion/include/serializer.h
+ /home/tommy/Workspace/Xion/include/xionMessages.h
+ /home/tommy/Workspace/Xion/include/xionTypes.h
+ /home/tommy/Workspace/Xion/include/xionio.h
+ /home/tommy/Workspace/Xion/test/normalizationTest.c
+ /home/tommy/Workspace/Xion/test/preprocessingTest.h
  /home/tommy/Workspace/Xion/test/xionTest.h
  /usr/local/include/jconfig.h
  /usr/local/include/jerror.h
@@ -89,6 +111,7 @@ CMakeFiles/xionTest.dir/test/preprocessingTest.c.o
  /home/tommy/Workspace/Xion/include/serializer.h
  /home/tommy/Workspace/Xion/include/xionMessages.h
  /home/tommy/Workspace/Xion/include/xionTypes.h
+ /home/tommy/Workspace/Xion/include/xionio.h
  /home/tommy/Workspace/Xion/test/preprocessingTest.c
  /home/tommy/Workspace/Xion/test/preprocessingTest.h
  /home/tommy/Workspace/Xion/test/xionTest.h

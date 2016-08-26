@@ -7,7 +7,7 @@
             "request": "launch",
             "targetArchitecture": "x64",
             "program": "${workspaceRoot}/bin/xionTest",
-            "args": ["preprocessing"],
+            "args": ["dataset"],
             "stopAtEntry": false,
             "cwd": "${workspaceRoot}",
             "environment": [],

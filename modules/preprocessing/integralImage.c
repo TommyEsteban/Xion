@@ -1,5 +1,4 @@
 /**
-/**
 * NestNet Group
 * Xion Object Detection Framework
 * integralImage.c
@@ -10,7 +9,7 @@
 
 #include "../../include/integralImage.h"
 
-bool parametersValid(ubyte *image, int *integral, int *squaredIntegral, uint n, uint width)
+bool integralImageParametersValid(ubyte *image, int *integral, int *squaredIntegral, uint pixels, uint width)
 {
 	if(image == NULL)
 	{
@@ -30,19 +29,19 @@ bool parametersValid(ubyte *image, int *integral, int *squaredIntegral, uint n, 
 		return false;
 	}
 
-	if(n == 0 || width == 0)
+	if(pixels == 0 || width == 0)
 	{
 		strcpy(errorMessage, NULL_DIMENSION);
 		return false;
 	}
 
-	if(n < width)
+	if(pixels < width)
 	{
 		strcpy(errorMessage, DIMENSION_LESS_THAN_WIDTH);
 		return false;
 	}
 
-	if(n > MAX_WIDTH_RESOLUTION * MAX_HEIGHT_RESOLUTION)
+	if(pixels > MAX_WIDTH_RESOLUTION * MAX_HEIGHT_RESOLUTION)
 	{
 		strcpy(errorMessage, MAX_RESOLUTION);
 		return false;
@@ -51,9 +50,9 @@ bool parametersValid(ubyte *image, int *integral, int *squaredIntegral, uint n, 
 	return true;
 }
 
-void computeIntegrals(ubyte *image, int *integral, int *squaredIntegral, uint n, uint width)
+void computeIntegrals(ubyte *image, int *integral, int *squaredIntegral, uint pixels, uint width)
 {
-	if(!parametersValid(image, integral, squaredIntegral, n, width))
+	if(!integralImageParametersValid(image, integral, squaredIntegral, pixels, width))
 	{
 		printf("%s\n", errorMessage);
 		return;
@@ -62,7 +61,7 @@ void computeIntegrals(ubyte *image, int *integral, int *squaredIntegral, uint n,
 	integral[0] = image[0];
 	squaredIntegral[0] = image[0] * image[0];
 	
-	for(uint i = 1; i < n; i++){
+	for(uint i = 1; i < pixels; i++){
 		
 		if(i < width){
 			integral[i] = image[i] + integral[i - 1];

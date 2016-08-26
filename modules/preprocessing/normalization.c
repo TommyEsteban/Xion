@@ -1,57 +1,61 @@
 /**
-* normalization.c
-* Guardian Kids
 * NestNet Group
+* Xion Object Detection Framework
+* normalization.h
+* normalization with integral image and squared integral image
 */
 
 #include "../../include/normalization.h"
 
-/*void normalizeByMedian(BinaryDataset *dataset)
+bool normalizationParametersValid(char *imageName, ubyte *image, int *integral, int *squaredIntegral, float *normalization, uint n)
 {
-	// total of pixels
-	int total = dataset->d * dataset->d;
-	
-	// median, variance and standard deviation variables
-	float median = 0.0, variance = 0.0, stdDev = 0.0;
-	
-	// counter for variance zero images
-	int vZeroCounter = 0;
-	
-	for(unsigned int n = 0; n < dataset->n; n++)
+	if(imageName == NULL)
 	{
-		// the median is the last number in the integral image divided by total
-		median = dataset->X1[n][dataset->d - 1][dataset->d - 1] / total;
-		
-		// the variance is the last number in the squared integral divided by total and minus median
-		variance = (dataset->X2[n][dataset->d - 1][dataset->d - 1] / total) - median;
-		
-		if(variance == 0)
-		{
-			//printf("variance is zero in item %d, median: %.6f\n", n, median);
-			vZeroCounter++;
-		}
-			
-		// the standard deviation is the square root of the variance
-		stdDev = sqrt(variance);
-		
-		for(unsigned int r = 0; r < dataset->d; r++)
-		{
-			for(unsigned int c = 0; c < dataset->d; c++)
-			{
-				if(stdDev != 0)
-					dataset->XN[n][r][c] = (dataset->X[n][r][c] - median) / stdDev;
-				else
-					dataset->XN[n][r][c] = 0.0;
-				//if(n == 136693 && r == 0 & c == 0) printf("XN[136693][0][0]: %.6f, stdDev: %.6f\n", dataset->XN[n][r][c], stdDev);
-			}
-		}
+		strcpy(errorMessage, NULL_IMAGE_NAME);
+		return false;
 	}
 	
-	printf("%d images with variance zero.\n", vZeroCounter);
-}*/
+	if(image == NULL)
+	{
+		strcpy(errorMessage, NULL_IMAGE);
+		return false;
+	}
 
-void normalizeByMedian(char *imageName, unsigned char *image, int *integral, int *squaredIntegral, float *normalization, unsigned int n)
+	if(integral == NULL)
+	{
+		strcpy(errorMessage, NULL_INTEGRAL_POINTER);
+		return false;
+	}
+
+	if(squaredIntegral == NULL)
+	{
+		strcpy(errorMessage, NULL_SQUARED_POINTER);
+		return false;
+	}
+
+	if(normalization == NULL)
+	{
+		strcpy(errorMessage, NULL_NORMALIZATION);
+		return false;
+	}
+
+	if(n == 0)
+	{
+		strcpy(errorMessage, NULL_DIMENSION);
+		return false;
+	}
+
+	return true;
+}
+
+void normalizeByMedian(char *imageName, ubyte *image, int *integral, int *squaredIntegral, float *normalization, uint n)
 {
+	if(!normalizationParametersValid(imageName, image, integral, squaredIntegral, normalization, n))
+	{
+		printf("%s\n", errorMessage);
+		return;
+	}
+
 	// median, variance and standard deviation variables
 	float median = 0.0, variance = 0.0, stdDev = 0.0;
 	
@@ -62,13 +66,16 @@ void normalizeByMedian(char *imageName, unsigned char *image, int *integral, int
 	variance = (squaredIntegral[n - 1] / n) - median;
 	
 	if(variance == 0)
-		printf("image %s is zero variance\n", imageName);
+	{
+		strcpy(warningMessage, ZERO_VARIANCE);
+		printf(warningMessage, imageName);
+	}
 	
 	// the standard deviation is the square root of the variance
 	stdDev = sqrt(variance);
 	
-	for(unsigned int i = 0; i < n; i++){
-		if(stdDev != 0)
+	for(uint i = 0; i < n; i++){
+		if(stdDev > 0)
 			normalization[i] = (image[i] - median) / stdDev;
 		else
 			normalization[i] = 0.0;

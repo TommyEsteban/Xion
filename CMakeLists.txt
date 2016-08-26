@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 3.0.2)
 set(CMAKE_LEGACY_CYGWIN_WIN32 0)
 cmake_policy(SET CMP0048 NEW)
 project(xion VERSION 1.1.0)
-set(CMAKE_C_FLAGS "-std=gnu99 -g")
+set(CMAKE_C_FLAGS "-O -Wall -std=gnu99 -g")
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

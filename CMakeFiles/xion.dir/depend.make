@@ -20,6 +20,7 @@ CMakeFiles/xion.dir/modules/dataset/datasetController.c.o: include/normalization
 CMakeFiles/xion.dir/modules/dataset/datasetController.c.o: include/serializer.h
 CMakeFiles/xion.dir/modules/dataset/datasetController.c.o: include/xionMessages.h
 CMakeFiles/xion.dir/modules/dataset/datasetController.c.o: include/xionTypes.h
+CMakeFiles/xion.dir/modules/dataset/datasetController.c.o: include/xionio.h
 CMakeFiles/xion.dir/modules/dataset/datasetController.c.o: modules/dataset/datasetController.c
 CMakeFiles/xion.dir/modules/dataset/datasetController.c.o: /usr/local/include/jconfig.h
 CMakeFiles/xion.dir/modules/dataset/datasetController.c.o: /usr/local/include/jerror.h
@@ -32,11 +33,17 @@ CMakeFiles/xion.dir/modules/dataset/datasetValidator.c.o: include/xionTypes.h
 CMakeFiles/xion.dir/modules/dataset/datasetValidator.c.o: modules/dataset/datasetValidator.c
 
 CMakeFiles/xion.dir/modules/dataset/serializer.c.o: include/serializer.h
+CMakeFiles/xion.dir/modules/dataset/serializer.c.o: include/xionTypes.h
 CMakeFiles/xion.dir/modules/dataset/serializer.c.o: modules/dataset/serializer.c
 CMakeFiles/xion.dir/modules/dataset/serializer.c.o: /usr/local/include/jconfig.h
 CMakeFiles/xion.dir/modules/dataset/serializer.c.o: /usr/local/include/jerror.h
 CMakeFiles/xion.dir/modules/dataset/serializer.c.o: /usr/local/include/jmorecfg.h
 CMakeFiles/xion.dir/modules/dataset/serializer.c.o: /usr/local/include/jpeglib.h
+
+CMakeFiles/xion.dir/modules/dataset/xionio.c.o: include/xionMessages.h
+CMakeFiles/xion.dir/modules/dataset/xionio.c.o: include/xionTypes.h
+CMakeFiles/xion.dir/modules/dataset/xionio.c.o: include/xionio.h
+CMakeFiles/xion.dir/modules/dataset/xionio.c.o: modules/dataset/xionio.c
 
 CMakeFiles/xion.dir/modules/features/haarFeature.c.o: include/haarFeature.h
 CMakeFiles/xion.dir/modules/features/haarFeature.c.o: modules/features/haarFeature.c
@@ -95,6 +102,7 @@ CMakeFiles/xion.dir/modules/frameworks/main.c.o: include/serializer.h
 CMakeFiles/xion.dir/modules/frameworks/main.c.o: include/xionConfig.h
 CMakeFiles/xion.dir/modules/frameworks/main.c.o: include/xionMessages.h
 CMakeFiles/xion.dir/modules/frameworks/main.c.o: include/xionTypes.h
+CMakeFiles/xion.dir/modules/frameworks/main.c.o: include/xionio.h
 CMakeFiles/xion.dir/modules/frameworks/main.c.o: modules/frameworks/main.c
 CMakeFiles/xion.dir/modules/frameworks/main.c.o: /usr/local/include/jconfig.h
 CMakeFiles/xion.dir/modules/frameworks/main.c.o: /usr/local/include/jerror.h
@@ -107,6 +115,8 @@ CMakeFiles/xion.dir/modules/preprocessing/integralImage.c.o: include/xionTypes.h
 CMakeFiles/xion.dir/modules/preprocessing/integralImage.c.o: modules/preprocessing/integralImage.c
 
 CMakeFiles/xion.dir/modules/preprocessing/normalization.c.o: include/normalization.h
+CMakeFiles/xion.dir/modules/preprocessing/normalization.c.o: include/xionMessages.h
+CMakeFiles/xion.dir/modules/preprocessing/normalization.c.o: include/xionTypes.h
 CMakeFiles/xion.dir/modules/preprocessing/normalization.c.o: modules/preprocessing/normalization.c
 
 CMakeFiles/xion.dir/modules/reporting/timeEval.c.o: include/timeEval.h

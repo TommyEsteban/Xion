@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/xionTest.dir/test/datasetTest.c.o"
   "CMakeFiles/xionTest.dir/test/datasetValidatorTest.c.o"
   "CMakeFiles/xionTest.dir/test/preprocessingTest.c.o"
+  "CMakeFiles/xionTest.dir/test/normalizationTest.c.o"
   "CMakeFiles/xionTest.dir/test/datasetControllerTest.c.o"
   "CMakeFiles/xionTest.dir/test/main.c.o"
   "bin/xionTest.pdb"
