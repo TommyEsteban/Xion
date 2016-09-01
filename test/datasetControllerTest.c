@@ -100,16 +100,7 @@ int createDataset_oneSinglePixelImage_fileCorrectlyCreated()
 int loadDataset_onePositiveOneNegative_valuesCorrectlyLoaded()
 {
     // arrange
-    char *outputPos = "data/testing/test2/pos.x";
-    char *outputNeg = "data/testing/test2/neg.x";
-    char *posDir = "data/testing/test2/pos";
-    char *negDir = "data/testing/test2/neg";
-    createSampleData(posDir, negDir, outputPos, outputNeg, "1");
-
-    initializeDatasetTest();
-    strcpy(arguments[2], outputPos);
-    strcpy(arguments[3], outputNeg);
-    strcpy(arguments[4], "1");
+    createSampleDataset("test2", "1");
     
     // act
     BinaryDataset *dataset = dat_loadDataset(arguments);
@@ -120,38 +111,21 @@ int loadDataset_onePositiveOneNegative_valuesCorrectlyLoaded()
         dataset->Y[0] == 1 && dataset->Y[1] == 0 &&
         dataset->X[0] == 0 && dataset->X[1] == 0)
     {
-        releaseDatasetTest();
+        releaseSampleDataset();
         dat_close(dataset);
-        remove(outputPos);
-        remove(outputNeg);
-        remove(posDir);
-        remove(negDir);
         return EXIT_SUCCESS;
     }
 
-    releaseDatasetTest();
+    releaseSampleDataset();
     dat_close(dataset);
-    remove(outputPos);
-    remove(outputNeg);
-    remove(posDir);
-    remove(negDir);
     return EXIT_FAILURE;
 }
 
 int loadDataset_one4X4PositiveOne4X4Negative_valuesCorrectlyLoaded()
 {
     // arrange
-    char *outputPos = "data/testing/test3/pos.x";
-    char *outputNeg = "data/testing/test3/neg.x";
-    char *posDir = "data/testing/test3/pos";
-    char *negDir = "data/testing/test3/neg";
-    createSampleData(posDir, negDir, outputPos, outputNeg, "2");
+    createSampleDataset("test3", "2");
 
-    initializeDatasetTest();
-    strcpy(arguments[2], outputPos);
-    strcpy(arguments[3], outputNeg);
-    strcpy(arguments[4], "2");
-    
     // act
     BinaryDataset *dataset = dat_loadDataset(arguments);
 
@@ -168,20 +142,12 @@ int loadDataset_one4X4PositiveOne4X4Negative_valuesCorrectlyLoaded()
         dataset->X[6] > 0.646086990 && dataset->X[6] < 0.646086992 && 
         dataset->X[7] > -0.646086992 && dataset->X[7] < -0.646086990) 
     {
-        releaseDatasetTest();
+        releaseSampleDataset();
         dat_close(dataset);
-        remove(outputPos);
-        remove(outputNeg);
-        remove(posDir);
-        remove(negDir);
         return EXIT_SUCCESS;
     }
 
-    releaseDatasetTest();
+    releaseSampleDataset();
     dat_close(dataset);
-    remove(outputPos);
-    remove(outputNeg);
-    remove(posDir);
-    remove(negDir);
     return EXIT_FAILURE;
 }

@@ -18,7 +18,10 @@
 
 //char *errorMessages;
 char **arguments;
-
+char *outputPos;
+char *outputNeg;
+char *posDir;
+char *negDir;
 BinaryDataset *sampleDataset;
 
 void initializeDatasetTest();
@@ -26,5 +29,9 @@ void initializeDatasetTest();
 void releaseDatasetTest();
 
 void createSampleData(char *posDir, char *negDir, char *posFile, char *negFile, char *dim);
+
+void createSampleDataset(char *directoryBase, char *dim);
+
+void releaseSampleDataset();
 
 #endif
