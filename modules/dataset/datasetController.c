@@ -47,13 +47,14 @@ BinaryDataset *dat_loadDataset(char **arguments)
         return NULL;
     
     // check that dimension is a positive number
-    uint imgSize = atoi(arguments[4]);
+    uint width = atoi(arguments[4]);
+    uint height = atoi(arguments[5]);
 
-    if(imgSize <= 0)
+    if(width <= 0 || height <= 0)
     {
         strcpy(errorMessage, INVALID_DIMENSION);
         return NULL;
     }
 
-    return dat_loadFromFiles(arguments[2], arguments[3], imgSize);
+    return dat_loadFromFiles(arguments[2], arguments[3], width, height);
 }

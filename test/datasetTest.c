@@ -70,6 +70,7 @@ void createSampleDataset(char *directoryBase, char *dim)
     strcpy(arguments[2], outputPos);
     strcpy(arguments[3], outputNeg);
     strcpy(arguments[4], dim);
+    strcpy(arguments[5], dim);
 }
 
 void releaseSampleDataset()

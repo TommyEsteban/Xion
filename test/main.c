@@ -51,8 +51,20 @@ int datasetTestSuite()
     
     if(datasetValidator_widthZero_returnFalseAndMessage() == EXIT_FAILURE)
         return EXIT_FAILURE;
+    
+    if(datasetValidator_heightNull_returnFalseAndMessage() == EXIT_FAILURE)
+        return EXIT_FAILURE;
 
-    if(datasetValidator_widthGreaterThanZero_returnTrue() == EXIT_FAILURE)
+    if(datasetValidator_heightMaxLength_returnFalseAndMessage() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+    
+    if(datasetValidator_heightNotNumber_returnFalseAndMessage() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+    
+    if(datasetValidator_heightZero_returnFalseAndMessage() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+
+    if(datasetValidator_widthAndHeightGreaterThanZero_returnTrue() == EXIT_FAILURE)
         return EXIT_FAILURE;
     
     if(createDataset_notExistingFolder_returnFalseAndErrorMessage() == EXIT_FAILURE)

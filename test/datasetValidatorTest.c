@@ -189,7 +189,103 @@ int datasetValidator_widthZero_returnFalseAndMessage()
     return EXIT_FAILURE;
 }
 
-int datasetValidator_widthGreaterThanZero_returnTrue()
+int datasetValidator_heightNull_returnFalseAndMessage()
+{
+    // arrange
+    initializeDatasetTest();
+    strcpy(arguments[2], "path");
+    strcpy(arguments[3], "file");
+    strcpy(arguments[4], "1");
+    strcpy(arguments[5], "");
+
+    // act
+    bool isValid = dat_isValid(arguments);
+    
+    // assert
+    if(!isValid && strcmp(THIRD_ARG_DIMENSION, errorMessage) == 0)
+    {
+        releaseDatasetTest();
+        return EXIT_SUCCESS;
+    }
+
+    releaseDatasetTest();
+    printf("FAILED: datasetValidator_widthNull_returnFalseAndMessage");
+    return EXIT_FAILURE;
+}
+
+int datasetValidator_heightMaxLength_returnFalseAndMessage()
+{
+    // arrange
+    initializeDatasetTest();
+    strcpy(arguments[2], "path");
+    strcpy(arguments[3], "file");
+    strcpy(arguments[4], "1");
+    strcpy(arguments[5], LONG_DATA_SAMPLE);
+
+    // act
+    bool isValid = dat_isValid(arguments);
+
+    // assert
+    if(!isValid && strcmp(ARGUMENT_EXCEEDS, errorMessage) == 0)
+    {
+        releaseDatasetTest();
+        return EXIT_SUCCESS;
+    }
+    
+    releaseDatasetTest();
+    printf("FAILED: datasetValidator_widthMaxLength_returnFalseAndMessage");
+    return EXIT_FAILURE;
+}
+
+int datasetValidator_heightNotNumber_returnFalseAndMessage()
+{
+    // arrange
+    initializeDatasetTest();
+    strcpy(arguments[2], "path");
+    strcpy(arguments[3], "file");
+    strcpy(arguments[4], "1");
+    strcpy(arguments[5], "dimension");
+
+    // act
+    bool isValid = dat_isValid(arguments);
+
+    // assert
+    if(!isValid && strcmp(THIRD_ARG_POSITIVE_NUMBER, errorMessage) == 0)
+    {
+        releaseDatasetTest();
+        return EXIT_SUCCESS;
+    }
+
+    releaseDatasetTest();
+    printf("FAILED: datasetValidator_widthNotNumber_returnFalseAndMessage");
+    return EXIT_FAILURE;
+}
+
+int datasetValidator_heightZero_returnFalseAndMessage()
+{
+    // arrange
+    initializeDatasetTest();
+    strcpy(arguments[2], "path");
+    strcpy(arguments[3], "file");
+    strcpy(arguments[4], "1");
+    strcpy(arguments[5], "0");
+
+    // act
+    bool isValid = dat_isValid(arguments);
+
+    // assert
+    if(!isValid && strcmp(THIRD_ARG_POSITIVE_NUMBER, errorMessage) == 0)
+    {
+        releaseDatasetTest();
+        return EXIT_SUCCESS;
+    }
+
+    releaseDatasetTest();
+    printf("FAILED: datasetValidator_widthZero_returnFalseAndMessage");
+    return EXIT_FAILURE;
+}
+
+int datasetValidator_widthAndHeightGreaterThanZero_returnTrue()
 {
     // arrange
     initializeDatasetTest();

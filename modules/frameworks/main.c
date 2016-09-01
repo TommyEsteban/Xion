@@ -210,7 +210,7 @@ void trainingWithAdaBoost(int argc, char **argv)
 	//normalizeByMedian(dataset);
 	//flatData(&dataset);
 	//freeIntermediateData(&dataset);
-	dat_loadFromFiles(trainingPosDataFile, trainingNegDataFile, size);
+	dat_loadFromFiles(trainingPosDataFile, trainingNegDataFile, size, size);
 	buildFeatures(size, size, useTrainedFeatures, featuresFolder);
 	initializeAdaBoost(numOfFeatures, dataset, mode);
 	trainAdaBoost(numOfFeatures, dataset, featuresFolder, classifiersFile, saveFeatures);
@@ -277,7 +277,7 @@ void testWithAdaBoost(int argc, char **argv)
 		}
 	}
 	
-	dat_loadFromFiles(validationPosDataFile, validationNegDataFile, size);
+	dat_loadFromFiles(validationPosDataFile, validationNegDataFile, size, size);
 	buildFeatures(size, size, false, NULL);
 	testAdaBoost(&dataset, classifiersFile, size);
 	
@@ -407,8 +407,8 @@ void trainingWithCascade(int argc, char **argv)
 		}
 	}
 	
-	dat_loadFromFiles(trainingPosDataFile, trainingNegDataFile, size);
-	dat_loadFromFiles(validationPosDataFile, validationNegDataFile, size);
+	dat_loadFromFiles(trainingPosDataFile, trainingNegDataFile, size, size);
+	dat_loadFromFiles(validationPosDataFile, validationNegDataFile, size, size);
     buildFeatures(size, size, useTrainedFeatures, featuresFolder);
     initializeCascade(MAXLAYERS);
 	trainCascadeClassifier(&tDataset, &vDataset, fi, di, Ft, featuresFolder, baseClassifiersFile, mode);
@@ -478,7 +478,7 @@ void testWithCascade(int argc, char **argv)
 		}
 	}
 	
-	dat_loadFromFiles(validationPosDataFile, validationNegDataFile, size);
+	dat_loadFromFiles(validationPosDataFile, validationNegDataFile, size, size);
 	buildFeatures(size, size, false, NULL);//printf("**: %p, *: %p, n: %d, n0: %d, n1:%d\n", &dataset, dataset, dataset->n, dataset->n0, dataset->n1);
 	testCascadeClassifier(&dataset, baseClassifiersFile, size);
 	

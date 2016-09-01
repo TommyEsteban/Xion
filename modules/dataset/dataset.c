@@ -69,13 +69,15 @@ void dat_createInFile(char *sourceFolder, char *destinationFile, uint width, uin
 	printf("Serialized %d image files.\n", counter);
 }
 
-BinaryDataset *dat_loadFromFiles(char *positiveDataFile, char *negativeDataFile, uint dimension)
+BinaryDataset *dat_loadFromFiles(char *positiveDataFile, char *negativeDataFile, uint width, uint height)
 {
 	BinaryDataset *dataset = (BinaryDataset *)malloc(sizeof(BinaryDataset));
 
 	// intialialize the dataset structure
-	dataset->d = dimension;
-	dataset->p = dimension * dimension;
+	dataset->d = width;
+	dataset->w = width;
+	dataset->h = height;
+	dataset->p = width * height;
 	dataset->n = 0;
 	dataset->n1 = 0;
 	dataset->n0 = 0;
