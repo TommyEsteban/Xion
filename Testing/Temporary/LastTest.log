@@ -1,10 +1,10 @@
-Start testing: Aug 31 18:59 COT
+Start testing: Aug 31 19:36 COT
 ----------------------------------------------------------
 1/2 Testing: dataset
 1/2 Test: dataset
 Command: "/home/tommy/Workspace/Xion/bin/xionTest" "dataset"
 Directory: /home/tommy/Workspace/Xion
-"dataset" start time: Aug 31 18:59 COT
+"dataset" start time: Aug 31 19:36 COT
 Output:
 ----------------------------------------------------------
 ERROR: not found directory notExistingDirectory
@@ -19,11 +19,15 @@ Serialized 1 image files.
 Serialized 1 image files.
 number of positive elements: 1
 number of negative elements: 1
+Serialized 2 image files.
+Serialized 2 image files.
+number of positive elements: 2
+number of negative elements: 2
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"dataset" end time: Aug 31 18:59 COT
+"dataset" end time: Aug 31 19:36 COT
 "dataset" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -31,7 +35,7 @@ Test Passed.
 2/2 Test: preprocessing
 Command: "/home/tommy/Workspace/Xion/bin/xionTest" "preprocessing"
 Directory: /home/tommy/Workspace/Xion
-"preprocessing" start time: Aug 31 18:59 COT
+"preprocessing" start time: Aug 31 19:36 COT
 Output:
 ----------------------------------------------------------
 the image to compute the integral is null
@@ -50,8 +54,8 @@ image testImage is zero variance
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"preprocessing" end time: Aug 31 18:59 COT
+"preprocessing" end time: Aug 31 19:36 COT
 "preprocessing" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Aug 31 18:59 COT
+End testing: Aug 31 19:36 COT

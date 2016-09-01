@@ -67,7 +67,10 @@ int datasetTestSuite()
     if(loadDataset_onePositiveOneNegative_valuesCorrectlyLoaded() == EXIT_FAILURE)
         return EXIT_FAILURE;
 
-    if(loadDataset_one4X4PositiveOne4X4Negative_valuesCorrectlyLoaded() == EXIT_FAILURE)
+    if(loadDataset_one2X2PositiveOne2X2Negative_valuesCorrectlyLoaded() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+
+    if(loadDataset_two2X2PositiveTwo2X2Negative_valuesCorrectlyLoaded() == EXIT_FAILURE)
         return EXIT_FAILURE;
     
     return EXIT_SUCCESS;

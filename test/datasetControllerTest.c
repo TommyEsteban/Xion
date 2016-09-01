@@ -121,7 +121,7 @@ int loadDataset_onePositiveOneNegative_valuesCorrectlyLoaded()
     return EXIT_FAILURE;
 }
 
-int loadDataset_one4X4PositiveOne4X4Negative_valuesCorrectlyLoaded()
+int loadDataset_one2X2PositiveOne2X2Negative_valuesCorrectlyLoaded()
 {
     // arrange
     createSampleDataset("test3", "2");
@@ -141,6 +141,46 @@ int loadDataset_one4X4PositiveOne4X4Negative_valuesCorrectlyLoaded()
         dataset->X[5] > -0.646086992 && dataset->X[5] < -0.646086990 &&
         dataset->X[6] > 0.646086990 && dataset->X[6] < 0.646086992 && 
         dataset->X[7] > -0.646086992 && dataset->X[7] < -0.646086990) 
+    {
+        releaseSampleDataset();
+        dat_close(dataset);
+        return EXIT_SUCCESS;
+    }
+
+    releaseSampleDataset();
+    dat_close(dataset);
+    return EXIT_FAILURE;
+}
+
+int loadDataset_two2X2PositiveTwo2X2Negative_valuesCorrectlyLoaded()
+{
+    // arrange
+    createSampleDataset("test4", "2");
+
+    // act
+    BinaryDataset *dataset = dat_loadDataset(arguments);
+
+    // assert
+    if(dataset != NULL && dataset->d == 2 && dataset->p == 4 && 
+        dataset->n == 4 && dataset->n0 == 2 && dataset->n1 == 2 &&
+        dataset->Y[0] == 1 && dataset->Y[1] == 1 && dataset->Y[2] == 0 && dataset->Y[3] == 0 &&
+
+        // positive picture 1
+        dataset->X[0] > -0.64825202 && dataset->X[0] < -0.64825200 && dataset->X[1] > -0.64825202 && dataset->X[1] < -0.64825200 &&
+        dataset->X[2] > 0.653792023 && dataset->X[2] < 0.653792025 && dataset->X[3] > 0.653792023 && dataset->X[3] < 0.653792025 &&
+
+        // positive picture 2
+        dataset->X[4] > 0.653792023 && dataset->X[4] < 0.653792025 && dataset->X[5] > 0.653792023 && dataset->X[5] < 0.653792025 &&
+        dataset->X[6] > -0.64825202 && dataset->X[6] < -0.64825200 && dataset->X[7] > -0.64825202 && dataset->X[7] < -0.64825200 && 
+        
+        // negative picture 1
+        dataset->X[8] > 0.646086990 && dataset->X[8] < 0.646086992 && dataset->X[9] > -0.646086992 && dataset->X[9] < -0.646086990 &&
+        dataset->X[10] > 0.646086990 && dataset->X[10] < 0.646086992 && dataset->X[11] > -0.646086992 && dataset->X[11] < -0.646086990 &&
+
+        // negative picture 2
+        dataset->X[12] > -0.646086992 && dataset->X[12] < -0.646086990 && dataset->X[13] > 0.646086990 && dataset->X[13] < 0.646086992 &&
+        dataset->X[14] > -0.646086992 && dataset->X[14] < -0.646086990 && dataset->X[15] > 0.646086990 && dataset->X[15] < 0.646086992
+      ) 
     {
         releaseSampleDataset();
         dat_close(dataset);

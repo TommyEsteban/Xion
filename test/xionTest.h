@@ -36,7 +36,8 @@ int createDataset_notExistingDestinationFolder_returnFalseAndErrorMessage();
 int createDataset_invalidDimension_returnFalseAndErrorMessage();
 int createDataset_oneSinglePixelImage_fileCorrectlyCreated();
 int loadDataset_onePositiveOneNegative_valuesCorrectlyLoaded();
-int loadDataset_one4X4PositiveOne4X4Negative_valuesCorrectlyLoaded();
+int loadDataset_one2X2PositiveOne2X2Negative_valuesCorrectlyLoaded();
+int loadDataset_two2X2PositiveTwo2X2Negative_valuesCorrectlyLoaded();
 
 // preprocessing tests
 int computeIntegrals_nullImage_returnErrorMessage();
