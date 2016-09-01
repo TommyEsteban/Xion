@@ -25,6 +25,7 @@ int datasetValidator_folderPathNull_returnFalseAndMessage()
     }
 
     releaseDatasetTest();
+    printf("FAILED: datasetValidator_folderPathNull_returnFalseAndMessage");
     return EXIT_FAILURE;
 }
 
@@ -45,6 +46,7 @@ int datasetValidator_folderPathMaxLength_returnFalseAndMessage()
     }
     
     releaseDatasetTest();
+    printf("FAILED: datasetValidator_folderPathMaxLength_returnFalseAndMessage");
     return EXIT_FAILURE;
 }
 
@@ -66,6 +68,7 @@ int datasetValidator_destinationFileNull_returnFalseAndMessage()
     }
 
     releaseDatasetTest();
+    printf("FAILED: datasetValidator_destinationFileNull_returnFalseAndMessage");
     return EXIT_FAILURE;
 }
 
@@ -87,10 +90,11 @@ int datasetValidator_destinationFileMaxLength_returnFalseAndMessage()
     }
     
     releaseDatasetTest();
+    printf("FAILED: datasetValidator_destinationFileMaxLength_returnFalseAndMessage");
     return EXIT_FAILURE;
 }
 
-int datasetValidator_dimensionNull_returnFalseAndMessage()
+int datasetValidator_widthNull_returnFalseAndMessage()
 {
     // arrange
     initializeDatasetTest();
@@ -109,16 +113,18 @@ int datasetValidator_dimensionNull_returnFalseAndMessage()
     }
 
     releaseDatasetTest();
+    printf("FAILED: datasetValidator_widthNull_returnFalseAndMessage");
     return EXIT_FAILURE;
 }
 
-int datasetValidator_dimensionMaxLength_returnFalseAndMessage()
+int datasetValidator_widthMaxLength_returnFalseAndMessage()
 {
     // arrange
     initializeDatasetTest();
     strcpy(arguments[2], "path");
     strcpy(arguments[3], "file");
     strcpy(arguments[4], LONG_DATA_SAMPLE);
+    strcpy(arguments[5], LONG_DATA_SAMPLE);
 
     // act
     bool isValid = dat_isValid(arguments);
@@ -131,16 +137,18 @@ int datasetValidator_dimensionMaxLength_returnFalseAndMessage()
     }
     
     releaseDatasetTest();
+    printf("FAILED: datasetValidator_widthMaxLength_returnFalseAndMessage");
     return EXIT_FAILURE;
 }
 
-int datasetValidator_dimensionNotNumber_returnFalseAndMessage()
+int datasetValidator_widthNotNumber_returnFalseAndMessage()
 {
     // arrange
     initializeDatasetTest();
     strcpy(arguments[2], "path");
     strcpy(arguments[3], "file");
     strcpy(arguments[4], "dimension");
+    strcpy(arguments[5], "dimension");
 
     // act
     bool isValid = dat_isValid(arguments);
@@ -153,16 +161,18 @@ int datasetValidator_dimensionNotNumber_returnFalseAndMessage()
     }
 
     releaseDatasetTest();
+    printf("FAILED: datasetValidator_widthNotNumber_returnFalseAndMessage");
     return EXIT_FAILURE;
 }
 
-int datasetValidator_dimensionZero_returnFalseAndMessage()
+int datasetValidator_widthZero_returnFalseAndMessage()
 {
     // arrange
     initializeDatasetTest();
     strcpy(arguments[2], "path");
     strcpy(arguments[3], "file");
     strcpy(arguments[4], "0");
+    strcpy(arguments[5], "0");
 
     // act
     bool isValid = dat_isValid(arguments);
@@ -175,16 +185,18 @@ int datasetValidator_dimensionZero_returnFalseAndMessage()
     }
 
     releaseDatasetTest();
+    printf("FAILED: datasetValidator_widthZero_returnFalseAndMessage");
     return EXIT_FAILURE;
 }
 
-int datasetValidator_dimensionGreaterThanZero_returnTrue()
+int datasetValidator_widthGreaterThanZero_returnTrue()
 {
     // arrange
     initializeDatasetTest();
     strcpy(arguments[2], "path");
     strcpy(arguments[3], "file");
     strcpy(arguments[4], "1");
+    strcpy(arguments[5], "1");
 
     // act
     bool isValid = dat_isValid(arguments);
@@ -197,5 +209,6 @@ int datasetValidator_dimensionGreaterThanZero_returnTrue()
     }
 
     releaseDatasetTest();
+    printf("FAILED: datasetValidator_widthGreaterThanZero_returnTrue");
     return EXIT_FAILURE;
 }

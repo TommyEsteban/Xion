@@ -15,6 +15,7 @@ CMakeFiles/xion.dir/modules/dataset/dataset.c.o: /usr/local/include/jpeglib.h
 
 CMakeFiles/xion.dir/modules/dataset/datasetController.c.o: include/dataset.h
 CMakeFiles/xion.dir/modules/dataset/datasetController.c.o: include/datasetController.h
+CMakeFiles/xion.dir/modules/dataset/datasetController.c.o: include/datasetValidator.h
 CMakeFiles/xion.dir/modules/dataset/datasetController.c.o: include/integralImage.h
 CMakeFiles/xion.dir/modules/dataset/datasetController.c.o: include/normalization.h
 CMakeFiles/xion.dir/modules/dataset/datasetController.c.o: include/serializer.h

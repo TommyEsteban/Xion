@@ -43,6 +43,8 @@ xionMessages.h
 /home/tommy/Workspace/Xion/include/xionMessages.h
 xionio.h
 /home/tommy/Workspace/Xion/include/xionio.h
+datasetValidator.h
+/home/tommy/Workspace/Xion/include/datasetValidator.h
 dataset.h
 /home/tommy/Workspace/Xion/include/dataset.h
 

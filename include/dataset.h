@@ -28,13 +28,13 @@ typedef struct BinaryDataset
 	uint n0;			// the number of elements with label 0 in the dataset
 } BinaryDataset;
 
-// loads dataset from positive and negative data files
-BinaryDataset *dat_loadFromFiles(char *positiveDataFile, char *negativeDataFile, uint dimension);
-
 // create a dataset in in the destinationFile made from a set of images located in a sourceFolder
 // the process includes computation of integrals and normalization, 
 // the dimension d is the length in pixels of the squared images;
-void dat_createInFile(char *sourceFolder, char *destinationFile, uint d);
+void dat_createInFile(char *sourceFolder, char *destinationFile, uint width, uint height);
+
+// loads dataset from positive and negative data files
+BinaryDataset *dat_loadFromFiles(char *positiveDataFile, char *negativeDataFile, uint dimension);
 
 // free resources of the dataset
 void dat_close(BinaryDataset *dataset);

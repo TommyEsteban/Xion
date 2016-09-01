@@ -9,6 +9,10 @@
 
 bool dat_createDataset(char **arguments)
 {
+    // check arguments
+    if(!dat_isValid(arguments))
+        return false;
+
     // check the first argument is an existing directory
     if(!doesDirectoryExist(arguments[2]))
         return false;
@@ -25,16 +29,10 @@ bool dat_createDataset(char **arguments)
     
     free(outputFile);
 
-    // check that dimension is a positive number
-    uint imgSize = atoi(arguments[4]);
+    uint width = atoi(arguments[4]);
+    uint height = atoi(arguments[5]);
 
-    if(imgSize <= 0)
-    {
-        strcpy(errorMessage, INVALID_DIMENSION);
-        return false;
-    }
-
-    dat_createInFile(arguments[2], arguments[3], imgSize);
+    dat_createInFile(arguments[2], arguments[3], width, height);
     return true;
 }
 
@@ -58,9 +56,4 @@ BinaryDataset *dat_loadDataset(char **arguments)
     }
 
     return dat_loadFromFiles(arguments[2], arguments[3], imgSize);
-}
-
-void dat_closeDataset()
-{
-
 }

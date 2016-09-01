@@ -25,6 +25,7 @@ int createDataset_notExistingFolder_returnFalseAndErrorMessage()
     }
 
     releaseDatasetTest();
+    printf("FAILED: createDataset_notExistingFolder_returnFalseAndErrorMessage");
     return EXIT_FAILURE;
 }
 
@@ -35,6 +36,7 @@ int createDataset_notExistingDestinationFolder_returnFalseAndErrorMessage()
     strcpy(arguments[2], "data/testing/test1");
     strcpy(arguments[3], "data/testing/notExistingFolder/output.x");
     strcpy(arguments[4], "1");
+    strcpy(arguments[5], "1");
 
     // act
     bool isValid = dat_createDataset(arguments);
@@ -47,29 +49,7 @@ int createDataset_notExistingDestinationFolder_returnFalseAndErrorMessage()
     }
 
     releaseDatasetTest();
-    return EXIT_FAILURE;
-}
-
-int createDataset_invalidDimension_returnFalseAndErrorMessage()
-{
-    // arrange
-    initializeDatasetTest();
-    cbyte *outputFile = "data/testing/test1/output.x";
-    strcpy(arguments[2], "data/testing/test1");
-    strcpy(arguments[3], outputFile);
-    strcpy(arguments[4], "s");
-
-    // act
-    bool isValid = dat_createDataset(arguments);
-
-    // assert
-    if(!isValid && strcmp(INVALID_DIMENSION, errorMessage) == 0)
-    {
-        releaseDatasetTest();
-        return EXIT_SUCCESS;
-    }
-
-    releaseDatasetTest();
+    printf("FAILED: createDataset_notExistingDestinationFolder_returnFalseAndErrorMessage");
     return EXIT_FAILURE;
 }
 
@@ -81,6 +61,7 @@ int createDataset_oneSinglePixelImage_fileCorrectlyCreated()
     strcpy(arguments[2], "data/testing/test1");
     strcpy(arguments[3], outputFile);
     strcpy(arguments[4], "1");
+    strcpy(arguments[5], "1");
 
     // act
     bool isValid = dat_createDataset(arguments);
@@ -94,6 +75,7 @@ int createDataset_oneSinglePixelImage_fileCorrectlyCreated()
     }
 
     releaseDatasetTest();
+    printf("FAILED: createDataset_oneSinglePixelImage_fileCorrectlyCreated");
     return EXIT_FAILURE;
 }
 
@@ -118,6 +100,7 @@ int loadDataset_onePositiveOneNegative_valuesCorrectlyLoaded()
 
     releaseSampleDataset();
     dat_close(dataset);
+    printf("FAILED: loadDataset_onePositiveOneNegative_valuesCorrectlyLoaded");
     return EXIT_FAILURE;
 }
 
@@ -149,6 +132,7 @@ int loadDataset_one2X2PositiveOne2X2Negative_valuesCorrectlyLoaded()
 
     releaseSampleDataset();
     dat_close(dataset);
+    printf("FAILED: loadDataset_one2X2PositiveOne2X2Negative_valuesCorrectlyLoaded");
     return EXIT_FAILURE;
 }
 
@@ -189,5 +173,6 @@ int loadDataset_two2X2PositiveTwo2X2Negative_valuesCorrectlyLoaded()
 
     releaseSampleDataset();
     dat_close(dataset);
+    printf("FAILED: loadDataset_two2X2PositiveTwo2X2Negative_valuesCorrectlyLoaded");
     return EXIT_FAILURE;
 }

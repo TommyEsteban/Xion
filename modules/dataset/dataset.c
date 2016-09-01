@@ -9,12 +9,12 @@
 
 #define BUFFER 12
 
-void dat_createInFile(char *sourceFolder, char *destinationFile, uint d)
+void dat_createInFile(char *sourceFolder, char *destinationFile, uint width, uint height)
 {
 	struct dirent *ent;
 	uint counter = 0;
 	int components = 3;
-	uint p = d * d;
+	uint p = width * height;
 	
 	DIR *dir = opendir (sourceFolder);
 
@@ -49,7 +49,7 @@ void dat_createInFile(char *sourceFolder, char *destinationFile, uint d)
 				imageData[j] = imageRawData[i]; 
 			}
 			
-			computeIntegrals(imageData, integral, squaredIntegral, p, d);
+			computeIntegrals(imageData, integral, squaredIntegral, p, width);
 			normalizeByMedian(filePath, imageData, integral, squaredIntegral, normalization, p);
 			ser_appendToFile(destinationFile, normalization, p);
 			

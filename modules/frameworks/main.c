@@ -11,7 +11,7 @@
 #include "../../include/xionMessages.h"
 #include "../../include/xionConfig.h"
 #include "../../include/dataset.h"
-#include "../../include/datasetValidator.h"
+//#include "../../include/datasetValidator.h"
 #include "../../include/datasetController.h"
 #include "../../include/integralImage.h"
 #include "../../include/normalization.h"
@@ -92,13 +92,13 @@ int processDataCommand(int argc, char **argv)
 	errorMessage = (char *)malloc(sizeof(char) * MAX_ERROR_LENGTH);
 	warningMessage = (char *)malloc(sizeof(char) * MAX_ERROR_LENGTH);
 
-	if(!dat_isValid(argv))
+	/*if(!dat_isValid(argv))
 	{
 		printf("%s", errorMessage);
 		free(errorMessage);
 		free(warningMessage);
 		return EXIT_FAILURE;
-	}
+	}*/
 	
 	if(!dat_createDataset(argv))
 	{

@@ -10,7 +10,7 @@
 
 #include "xionTest.h"
 
-#define MAX_ARGUMENTS 5
+#define MAX_ARGUMENTS 6
 #define MAX_ARGUMENT_LENGTH 2048
 //#define MAX_ERROR_LENGTH 1024
 
@@ -27,8 +27,6 @@ BinaryDataset *sampleDataset;
 void initializeDatasetTest();
 
 void releaseDatasetTest();
-
-void createSampleData(char *posDir, char *negDir, char *posFile, char *negFile, char *dim);
 
 void createSampleDataset(char *directoryBase, char *dim);
 

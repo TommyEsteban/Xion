@@ -18,40 +18,26 @@ void initializeDatasetTest()
     
     strcpy(arguments[0], "xion");
     strcpy(arguments[1], "data");
+    strcpy(arguments[2], "folder");
+    strcpy(arguments[3], "file");
+    strcpy(arguments[4], "1");
+    strcpy(arguments[5], "1");    
 }
 
 void releaseDatasetTest()
 {
     for(uint i = 0; i < MAX_ARGUMENTS; i++)
     {
-        //arguments[i][0] = "\0";
         free(arguments[i]);
     }
 
     free(arguments);
     free(warningMessage);
     free(errorMessage);
-
-    /*if(doesFileExist("data/testing/oneSinglePixelImage/output.x"))
-        remove("data/testing/oneSinglePixelImage/output.x");*/
-}
-
-void createSampleData(char *posDir, char *negDir, char *posFile, char *negFile, char *dim)
-{
-    initializeDatasetTest();
-    strcpy(arguments[2], posDir);
-    strcpy(arguments[3], posFile);
-    strcpy(arguments[4], dim);
-    dat_createDataset(arguments);
-    strcpy(arguments[2], negDir);
-    strcpy(arguments[3], negFile);
-    dat_createDataset(arguments);
-    releaseDatasetTest();
 }
 
 void createSampleDataset(char *directoryBase, char *dim)
 {
-    char *baseFolder = "test3";
     outputPos = (char *)malloc(sizeof(char) * 1024);
     outputNeg = (char *)malloc(sizeof(char) * 1024);
     posDir = (char *)malloc(sizeof(char) * 1024);
@@ -73,13 +59,12 @@ void createSampleDataset(char *directoryBase, char *dim)
     strcpy(arguments[2], posDir);
     strcpy(arguments[3], outputPos);
     strcpy(arguments[4], dim);
+    strcpy(arguments[5], dim);
     dat_createDataset(arguments);
     strcpy(arguments[2], negDir);
     strcpy(arguments[3], outputNeg);
     dat_createDataset(arguments);
     releaseDatasetTest();
-
-    //createSampleData(posDir, negDir, outputPos, outputNeg, dim);
 
     initializeDatasetTest();
     strcpy(arguments[2], outputPos);

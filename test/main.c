@@ -39,26 +39,26 @@ int datasetTestSuite()
     
     if(datasetValidator_destinationFileMaxLength_returnFalseAndMessage() == EXIT_FAILURE)
         return EXIT_FAILURE;
-
-    if(datasetValidator_dimensionMaxLength_returnFalseAndMessage() == EXIT_FAILURE)
-        return EXIT_FAILURE;
     
-    if(datasetValidator_dimensionNotNumber_returnFalseAndMessage() == EXIT_FAILURE)
-        return EXIT_FAILURE;
-    
-    if(datasetValidator_dimensionZero_returnFalseAndMessage() == EXIT_FAILURE)
+    if(datasetValidator_widthNull_returnFalseAndMessage() == EXIT_FAILURE)
         return EXIT_FAILURE;
 
-    if(datasetValidator_dimensionGreaterThanZero_returnTrue() == EXIT_FAILURE)
+    if(datasetValidator_widthMaxLength_returnFalseAndMessage() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+    
+    if(datasetValidator_widthNotNumber_returnFalseAndMessage() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+    
+    if(datasetValidator_widthZero_returnFalseAndMessage() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+
+    if(datasetValidator_widthGreaterThanZero_returnTrue() == EXIT_FAILURE)
         return EXIT_FAILURE;
     
     if(createDataset_notExistingFolder_returnFalseAndErrorMessage() == EXIT_FAILURE)
         return EXIT_FAILURE;
     
     if(createDataset_notExistingDestinationFolder_returnFalseAndErrorMessage() == EXIT_FAILURE)
-        return EXIT_FAILURE;
-    
-    if(createDataset_invalidDimension_returnFalseAndErrorMessage() == EXIT_FAILURE)
         return EXIT_FAILURE;
 
     if(createDataset_oneSinglePixelImage_fileCorrectlyCreated() == EXIT_FAILURE)

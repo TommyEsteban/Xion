@@ -17,6 +17,7 @@
 #include "xionTypes.h"
 #include "xionMessages.h"
 #include "xionio.h"
+#include "datasetValidator.h"
 #include "dataset.h"
 
 bool dat_createDataset(char **arguments);

@@ -38,21 +38,21 @@ bool dat_isValid(char **arguments)
     }
 
     // check the dimension is not null
-    if(arguments[4][0] == '\0')
+    if(arguments[4][0] == '\0' || arguments[5][0] == '\0')
     {
         strcpy(errorMessage, THIRD_ARG_DIMENSION);
         return false;
     }
 
     // check the dimension does not exceeds the max number of characters allowed
-    if(strlen(arguments[4]) > MAX_PATH_CHARACTERS)
+    if(strlen(arguments[4]) > MAX_PATH_CHARACTERS || strlen(arguments[5]) > MAX_PATH_CHARACTERS)
     {
         strcpy(errorMessage, ARGUMENT_EXCEEDS);
         return false;
     }
 
     // check valid dimension, it must be equal or greater than zero
-    if(atoi(arguments[4]) <= 0)
+    if(atoi(arguments[4]) <= 0 || atoi(arguments[5]) <= 0)
     {
         strcpy(errorMessage, THIRD_ARG_POSITIVE_NUMBER);
         return false;
