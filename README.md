@@ -1,2 +1,2 @@
 # Xion
-Implementation of the Viola Jones detection framework in C and CUDA.
+Implementation of the Viola Jones detection framework in C/C++ and CUDA.
