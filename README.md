@@ -9,10 +9,10 @@ A compact implementation of the Viola–Jones object detection framework (AdaBoo
 <strong>Quick highlights</strong>
 </p>
 
-- <img src="assets/icons/book.svg" width="18" style="vertical-align:middle;margin-right:8px;" alt="book"/> Language: C/C99 with optional CUDA (.cu) components
-- <img src="assets/icons/gear.svg" width="18" style="vertical-align:middle;margin-right:8px;" alt="gear"/> Build system: CMake (>= 3.0.2)
-- <img src="assets/icons/deps.svg" width="18" style="vertical-align:middle;margin-right:8px;" alt="deps"/> Image support: libjpeg
-- <img src="assets/icons/check.svg" width="18" style="vertical-align:middle;margin-right:8px;" alt="binaries"/> Binaries: `bin/xion` (runtime) and `bin/xionTest` (tests)
+- <img src="assets/icons/section-requirements.svg" width="18" style="vertical-align:middle;margin-right:8px;" alt="language"/> Language: C/C99 with optional CUDA (.cu) components
+- <img src="assets/icons/section-build.svg" width="18" style="vertical-align:middle;margin-right:8px;" alt="build"/> Build system: CMake (>= 3.0.2)
+- <img src="assets/icons/section-deps.svg" width="18" style="vertical-align:middle;margin-right:8px;" alt="deps"/> Image support: libjpeg
+- <img src="assets/icons/section-tests.svg" width="18" style="vertical-align:middle;margin-right:8px;" alt="binaries"/> Binaries: `bin/xion` (runtime) and `bin/xionTest` (tests)
 
 <h2><img src="assets/icons/section-status.svg" width="20" style="vertical-align:middle;margin-right:8px;" alt="status"/> Status</h2>
 
@@ -86,18 +86,22 @@ bin/xion training adaboost -tposdata path/to/pos.dat -tnegdata path/to/neg.dat -
 - Tests are added with `add_test` for `dataset` and `preprocessing`.
 - Binaries and libraries are configured to output to `bin/` and `lib/` respectively.
 
-<h2><img src="assets/icons/book.svg" width="20" style="vertical-align:middle;margin-right:8px;" alt="contrib"/> Contributing / Running locally</h2>
+<h2><img src="assets/icons/book.svg" width="20" style="vertical-align:middle;margin-right:8px;" alt="contrib"/> Running locally</h2>
 
-Contributions are welcome. Prefer small, incremental changes and keep the C code style consistent. Run tests locally via `ctest`.
+Anyone can run this locally with CTest:
+
+```sh
+ctest --output-on-failure
+```
 
 <h2><img src="assets/icons/xion-logo.svg" width="20" style="vertical-align:middle;margin-right:8px;" alt="history"/> Attribution & History</h2>
 
-This is likely a personal or academic implementation of Viola–Jones and predates mainstream generative AI workflows. The code and tests are hand-authored and reflect classic image-detection pipeline techniques.
+This repository appears to be a personal or academic implementation of the Viola–Jones framework, and it predates the modern generative AI era. The code and tests are hand-authored and reflect classic image-detection pipeline techniques from the time when real-time object and face detection was emerging as a practical computer vision milestone.
+
+The original Viola–Jones algorithm was introduced by Paul Viola and Michael Jones in 2001, and it was especially useful for fast face detection in webcam systems, image search, and early surveillance or robotics applications. This project follows that same spirit: classical feature generation, AdaBoost-based classifier training, and cascade evaluation for speed.
+
+Today, this matters because the same ideas still influence modern real-time vision systems: efficient feature extraction, cascaded classifiers, and lightweight detection pipelines remain useful in mobile, embedded, and low-latency applications.
 
 ---
 
-If you'd like, I can:
-
-- run the build and tests here and share output,
-- add a tiny demo script to exercise the detector,
-- or produce a simple diagram of the processing pipeline.
+For more background, see the Viola–Jones algorithm on [Wikipedia](https://en.wikipedia.org/wiki/Viola%E2%80%93Jones_object_detection_framework).
